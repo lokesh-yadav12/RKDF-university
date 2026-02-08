@@ -173,7 +173,7 @@ export default function Header() {
 					{/* Mobile Menu Button */}
 					<button
 						onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-						className="lg:hidden p-2 right-0 ml-[60vw] rounded-lg bg-[#4a90c8] hover:bg-[#5a9fd8] transition-colors"
+						className="lg:hidden p-2 right-0 ml-[70vw] rounded-lg bg-[#4a90c8] hover:bg-[#5a9fd8] transition-colors"
 					>
 						{isMobileMenuOpen ? (
 							<X className="w-6 h-6 text-white" />
