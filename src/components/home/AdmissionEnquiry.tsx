@@ -67,7 +67,7 @@ const AdmissionEnquiry = () => {
   };
 
   return (
-    <section className="max-h-screen bg-white sm:py-16 py-8 px-4 sm:px-6 lg:px-8">
+    <section className="min-h-screen md:max-h-screen bg-white sm:py-16 py-8 px-4 sm:px-6 lg:px-8">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <div className="bg-[#4a90c8] rounded-t-2xl shadow-lg px-8 py-3 sm:py-4">

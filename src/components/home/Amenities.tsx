@@ -40,7 +40,7 @@ const item = {
 
 export default function Amenities() {
   return (
-    <section className="relative max-h-screen overflow-hidden bg-white px-6 py-12">
+    <section className="relative min-h-screen md:max-h-screen overflow-hidden bg-white px-6 py-12">
       {/* Animated Gradient Background */}
       {/* <div className="absolute inset-0 bg-gradient-to-br from-blue-600/20 via-indigo-500/10 to-cyan-400/20 animate-pulse" />
       <div className="absolute -top-40 -left-40 w-[500px] h-[500px] bg-blue-500/30 rounded-full blur-[120px]" />

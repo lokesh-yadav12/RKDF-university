@@ -171,7 +171,7 @@ export default function HeroSection() {
         <div className="max-w-6xl mx-auto text-center">
           <div className="flex items-center justify-center mb-6">
             {/* Logo placeholder - replace with actual logo */}
-            <div className="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center mr-4">
+           <div className="hidden md:flex w-16 h-16 bg-red-600 rounded-full items-center justify-center mr-4">
              <img src={logo} alt="" />
             </div>
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900">
