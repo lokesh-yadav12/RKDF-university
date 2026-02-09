@@ -1,20 +1,29 @@
 import React, { useState, useEffect, useRef } from "react";
-import build from '../../assets/building.png';
+//import build from '../../assets/building.png';
 import bed from '../../assets/bed.png'
+import bhabha from '../../assets/babha.png'
+import ctr from '../../assets/ctr.png'
+import ctrEntrance from '../../assets/ctr1.png'
 import homeopathy from '../../assets/homeopathy.png'
+import nursing from '../../assets/nursing.png'
+import polytecnic from '../../assets/polytecnic.png'
+import ayurveda from '../../assets/ayurveda.png'
+import utd from '../../assets/utd.png'
+import satya from '../../assets/satya.png'
+import vit from '../../assets/vit.png'  
+import univer from '../../assets/university.png'
+
 
 const LuxuryInstitutionsCarousel = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
  const autoPlayRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
-
-
   const institutions = [
     {
       id: 1,
-      name: "RKDF Homeopathy College",
-      image: build,
+      name: "RKDF Bed College",
+      image: bed,
       description: "Excellence in Homeopathic Education",
       established: "2005",
       category: "Healthcare",
@@ -23,8 +32,8 @@ const LuxuryInstitutionsCarousel = () => {
     },
     {
       id: 2,
-      name: "RKDF Nursing College",
-      image: bed,
+      name: "RKDF Bhabha College",
+      image: bhabha,
       description: "Nurturing Healthcare Professionals",
       established: "2008",
       category: "Healthcare",
@@ -33,8 +42,8 @@ const LuxuryInstitutionsCarousel = () => {
     },
     {
       id: 3,
-      name: "RKDF Pharmacy College",
-      image: homeopathy,
+      name: "RKDF CTR College",
+      image: ctr,
       description: "Leading Pharmaceutical Education",
       established: "2010",
       category: "Sciences",
@@ -43,8 +52,20 @@ const LuxuryInstitutionsCarousel = () => {
     },
     {
       id: 4,
-      name: "RKDF Engineering College",
-      image: build,
+      name: "RKDF CTR College Entrance",
+      image: ctrEntrance,
+      description: "Innovation in Technology",
+      established: "2003",
+      category: "Technology",
+      students: "1200+",
+      link: "/institutions/engineering"
+    },
+
+
+    {
+      id: 5,
+      name: "RKDF Homeopathy College",
+      image: homeopathy,
       description: "Innovation in Technology",
       established: "2003",
       category: "Technology",
@@ -52,46 +73,87 @@ const LuxuryInstitutionsCarousel = () => {
       link: "/institutions/engineering"
     },
     {
-      id: 5,
-      name: "RKDF Medical College",
-      image: bed,
+      id: 6,
+      name: "RKDF Nursing College",
+      image: nursing,
+      description: "Innovation in Technology",
+      established: "2003",
+      category: "Technology",
+      students: "1200+",
+      link: "/institutions/engineering"
+    },
+    {
+      id: 7,
+      name: "RKDF Polytecnic College",
+      image: polytecnic,
+      description: "Innovation in Technology",
+      established: "2003",
+      category: "Technology",
+      students: "1200+",
+      link: "/institutions/engineering"
+    },
+    {
+      id: 8,
+      name: "RKDF Ayurveda College",
+      image: ayurveda,
+      description: "Innovation in Technology",
+      established: "2003",
+      category: "Technology",
+      students: "1200+",
+      link: "/institutions/engineering"
+    },
+    // {
+    //   id: 9,
+    //   name: "RKDF CTR College Entrance",
+    //   image: build,
+    //   description: "Innovation in Technology",
+    //   established: "2003",
+    //   category: "Technology",
+    //   students: "1200+",
+    //   link: "/institutions/engineering"
+    // },
+    {
+      id: 10,
+      name: "RKDF University Entrance",
+      image: univer,
       description: "Quality Medical Education",
       established: "2012",
       category: "Healthcare",
       students: "800+",
       link: "/institutions/medical"
     },
-    // {
-    //   id: 6,
-    //   name: "RKDF Dental College",
-    //   image: homeopathy,
-    //   description: "Advanced Dental Sciences",
-    //   established: "2015",
-    //   category: "Healthcare",
-    //   students: "400+",
-    //   link: "/institutions/dental"
-    // },
-    // {
-    //   id: 7,
-    //   name: "RKDF Management Institute",
-    //   image: build,
-    //   description: "Business Leadership Excellence",
-    //   established: "2007",
-    //   category: "Business",
-    //   students: "900+",
-    //   link: "/institutions/management"
-    // },
-    // {
-    //   id: 8,
-    //   name: "RKDF Law College",
-    //   image: bed,
-    //   description: "Legal Education & Justice",
-    //   established: "2011",
-    //   category: "Legal Studies",
-    //   students: "550+",
-    //   link: "/institutions/law"
-    // }
+    {
+      id: 11,
+      name: "RKDF UTD Building",
+      image: utd,
+      description: "Advanced Dental Sciences",
+      established: "2015",
+      category: "Healthcare",
+      students: "400+",
+      link: "/institutions/dental"
+    },
+    {
+      id: 12,
+      name: "RKDF Satya Sai College",
+      image: satya,
+      description: "Business Leadership Excellence",
+      established: "2007",
+      category: "Business",
+      students: "900+",
+      link: "/institutions/management"
+    },
+    {
+      id: 13,
+      name: "RKDF VIT College",
+      image: vit,
+      description: "Legal Education & Justice",
+      established: "2011",
+      category: "Legal Studies",
+      students: "550+",
+      link: "/institutions/law"
+    }
   ];
+
 
   // Auto-scroll every 2 seconds
   useEffect(() => {
@@ -151,7 +213,7 @@ const LuxuryInstitutionsCarousel = () => {
 
       <div className="relative max-w-7xl mx-auto px-4 md:px-6">
         {/* Refined Header */}
-        <div className="text-center mb-4 md:mb-4">
+        <div className="text-center mb-4 md:mb-2">
           {/* <div className="inline-block mb-4 md:mb-6">
             <div className="flex items-center gap-2 md:gap-4">
               <div className="h-[1px] w-8 md:w-16 bg-gradient-to-r from-transparent via-amber-800 to-amber-800"></div>
@@ -217,11 +279,11 @@ const LuxuryInstitutionsCarousel = () => {
                     </div> */}
 
                     {/* Image Section */}
-                    <div className="relative h-44 sm:h-56 lg:h-68 overflow-hidden bg-stone-100">
+                    <div className="relative h-48 sm:h-60 lg:h-72 overflow-hidden bg-stone-100">
                       <img
                         src={institution.image}
                         alt={institution.name}
-                        className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+                        className="w-full h-full object-contain transition-transform duration-700 hover:scale-105"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-stone-900/60 via-stone-900/20 to-transparent"></div>
                       
@@ -244,9 +306,9 @@ const LuxuryInstitutionsCarousel = () => {
                         </div>
                       </div>
 
-                      <p className="text-sm md:text-base text-gray-600  leading-relaxed mb-3 md:mb-4">
+                      {/* <p className="text-sm md:text-base text-gray-600  leading-relaxed mb-3 md:mb-4">
                         {institution.description}
-                      </p>
+                      </p> */}
 
                       {/* Stats */}
                       <div className="flex items-center gap-3 sm:gap-4 lg:gap-6 mb-2 md:mb-3 pb-3 md:pb-4 border-b border-stone-200">

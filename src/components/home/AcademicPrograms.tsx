@@ -1,5 +1,21 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import f1 from '../../assets/f1.png'
+import f2 from '../../assets/f2.png'
+import f3 from '../../assets/f3.png'
+import f4 from '../../assets/f4.png'
+import f5 from '../../assets/f5.png'
+import f6 from '../../assets/f6.png'
+import f7 from '../../assets/f7.png'  
+import f8 from '../../assets/f8.png'
+import f9 from '../../assets/f9.png'
+import f10 from '../../assets/f10.png'
+import f11 from '../../assets/f11.png'
+import f12 from '../../assets/f12.png'
+import f13 from '../../assets/f13.png'
+import f14 from '../../assets/f14.png'
+import f15 from '../../assets/f15.png'
+import f16 from '../../assets/f16.png'
 
 const Exploredepartment = () => {
   const [hoveredCard, setHoveredCard] = useState<number | null>(null);
@@ -8,112 +24,112 @@ const Exploredepartment = () => {
     {
       id: 1,
       title: "Engineering & Technology",
-      image: "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=800&h=600&fit=crop",
+      image: f1,
       size: "big",
       link: "/faculties/engineering-technology"
     },
     {
       id: 2,
       title: "Homeopathy & Medical Science",
-      image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800&h=600&fit=crop",
+      image: f2,
       size: "tall",
       link: "/faculties/homeopathy-medical-science"
     },
     {
       id: 3,
       title: "Placements",
-      image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&h=600&fit=crop",
+      image: f3,
       size: "regular",
       link: "/placements"
     },
     {
       id: 4,
       title: "Management",
-      image: "https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=800&h=600&fit=crop",
+      image: f4,
       size: "big",
       link: "/faculties/management"
     },
     {
       id: 5,
       title: "Science",
-      image: "https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=800&h=600&fit=crop",
+      image: f5,
       size: "regular",
       link: "/faculties/science"
     },
     {
       id: 6,
       title: "Commerce and Management",
-      image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&h=600&fit=crop",
+      image: f6,
       size: "tall",
       link: "/faculties/commerce-management"
     },
     {
       id: 7,
       title: "Education",
-      image: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=800&h=600&fit=crop",
+      image: f7,
       size: "tall",
       link: "/faculties/education"
     },
     {
       id: 8,
       title: "Library & Information Science",
-      image: "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=800&h=600&fit=crop",
+      image: f8,
       size: "tall",
       link: "/faculties/library-information-science"
     },
     {
       id: 9,
       title: "Computer Application",
-      image: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=800&h=600&fit=crop",
+      image: f9,
       size: "big",
       link: "/faculties/computer-application"
     },
     {
       id: 10,
       title: "Social Science",
-      image: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=800&h=600&fit=crop",
+      image: f10,
       size: "regular",
       link: "/faculties/social-science"
     },
     {
       id: 11,
       title: "Agriculture",
-      image: "https://images.unsplash.com/photo-1574943320219-553eb213f72d?w=800&h=600&fit=crop",
+      image: f11,
       size: "regtular",
       link: "/faculties/agriculture"
     },
     {
       id: 12,
       title: "Architecture",
-      image: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=800&h=600&fit=crop",
+      image: f12,
       size: "tall",
       link: "/faculties/architecture"
     },
     {
       id: 13,
       title: "Ayurved Courses",
-      image: "https://images.unsplash.com/photo-1587854692152-cbe660dbde88?w=800&h=600&fit=crop",
+      image: f13,
       size: "big",
       link: "/faculties/ayurved-courses"
     },
     {
       id: 14,
       title: "Pharmacy",
-      image: "https://images.unsplash.com/photo-1587854692152-cbe660dbde88?w=800&h=600&fit=crop",
+      image: f14,
       size: "regular",
       link: "/faculties/pharmacy"
     },
     {
       id: 15,
       title: "Law",
-      image: "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=800&h=600&fit=crop",
+      image: f15,
       size: "regular",
       link: "/faculties/law"
     },
     {
       id: 16,
       title: "Nursing",
-      image: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=800&h=600&fit=crop",
+      image: f16,
       size: "regular",
       link: "/faculties/nursing"
     }
@@ -165,7 +181,7 @@ const Exploredepartment = () => {
             <img
               src={dept.image}
               alt={dept.title}
-              className="absolute inset-0 w-full h-full object-cover transition-all duration-700 group-hover:scale-110"
+              className="absolute inset-0 w-full h-full object-contain transition-all duration-700 group-hover:scale-110"
             />
 
             {/* Dark overlay - fades on hover */}

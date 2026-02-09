@@ -1,5 +1,13 @@
 import React, { useState, useEffect, useRef } from 'react';
-
+import punjab from '../../assets/panjab.png';
+import deepak from '../../assets/deepak.png';
+import gautam from '../../assets/gautam.png';
+import arvind from '../../assets/arvind.png';
+import bd from '../../assets/bd.png';
+import rb from '../../assets/rb.png';
+import salooja from '../../assets/salooja.png';
+import rp from '../../assets/rp.png';
+import vinod from '../../assets/vinod.png';
 const AdvisoryBoard = () => {
 	const [currentIndex, setCurrentIndex] = useState(0);
 	const [isPaused, setIsPaused] = useState(false);
@@ -8,86 +16,77 @@ const AdvisoryBoard = () => {
 	const advisoryMembers = [
 		{
 			id: 1,
+			name: 'Prof. Panjab Singh',
+			title: 'Chancellor',
+			organization: 'Central Agriculture University, Jhansi (U.P.)',
+			role: 'Chairman of Core Group',
+			image: punjab,
+		},
+		{
+			id: 2,
+			name: 'Prof. Deepak Pental',
+			title: 'Ex. Vice Chancellor, Delhi University',
+			organization: 'Delhi University',
+			role: 'Member of Core Group',
+			image: deepak,
+		},
+		{
+			id: 3,
+			name: 'Dr. Gautam Goswami',
+			title: 'Director TRIFAC',
+			organization: 'TRIFAC',
+			role: 'Member of Core Group',
+			image: gautam,
+		},
+		{
+			id: 4,
+			name: 'Padambhushan Prof. R. B. Singh',
+			title: 'Chancellor',
+			organization: 'Central Agriculture University Imphal',
+			role: 'Member of Core Group',
+			image: rb,
+		},
+		{
+			id: 5,
 			name: 'Prof. M. K. Salooja',
 			title: 'Director',
 			organization: 'School of Agriculture, IGNOU, New Delhi',
 			role: 'Member of Core Group',
-			image: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&h=400&fit=crop',
+			image: salooja,
 		},
 		{
-			id: 2,
+			id: 6,
 			name: 'Prof. R. P. Singh',
 			title: 'Secretary General, IAUA',
 			organization: 'Indian Agricultural Universities Association',
 			role: 'Member of Core Group',
-			image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop',
+			image: rp,
 		},
 		{
-			id: 3,
+			id: 7,
 			name: 'Dr. Arvind Kumar',
 			title: 'Vice Chancellor',
 			organization: 'Central Agriculture University, Jhansi (U.P.)',
 			role: 'Member of Core Group',
-			image: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&h=400&fit=crop',
+			image: arvind,
 		},
 		{
-			id: 4,
+			id: 8,
 			name: 'Prof. B. D. Singh',
 			title: 'Dean Academic',
 			organization: 'Jaipuria Institute of Management',
 			role: 'Member of Core Group',
-			image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop',
+			image: bd,
 		},
 		{
-			id: 5,
+			id: 9,
 			name: 'Dr. Vinod Kumar Sethi',
 			title: 'Director General Research (DGR)',
 			organization: 'RKDF University, Bhopal',
 			role: 'Member of Core Group',
-			image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=400&fit=crop',
-		},
-		{
-			id: 6,
-			name: 'Dr. Rajesh Sharma',
-			title: 'Professor & Head',
-			organization: 'Department of Computer Science, Delhi University',
-			role: 'Member of Core Group',
-			image: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400&h=400&fit=crop',
-		},
-		{
-			id: 7,
-			name: 'Prof. Anjali Verma',
-			title: 'Dean Research',
-			organization: 'National Institute of Technology, Kurukshetra',
-			role: 'Member of Core Group',
-			image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=400&fit=crop',
-		},
-		{
-			id: 8,
-			name: 'Dr. Suresh Patel',
-			title: 'Director',
-			organization: 'Indian Institute of Management, Lucknow',
-			role: 'Member of Core Group',
-			image: 'https://images.unsplash.com/photo-1568602471122-7832951cc4c5?w=400&h=400&fit=crop',
-		},
-		{
-			id: 9,
-			name: 'Prof. Meera Kapoor',
-			title: 'Vice Chancellor',
-			organization: 'University of Mumbai',
-			role: 'Member of Core Group',
-			image: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=400&h=400&fit=crop',
-		},
-		{
-			id: 10,
-			name: 'Dr. Amit Malhotra',
-			title: 'Professor Emeritus',
-			organization: 'Indian Institute of Science, Bangalore',
-			role: 'Member of Core Group',
-			image: 'https://images.unsplash.com/photo-1566492031773-4f4e44671857?w=400&h=400&fit=crop',
+			image: vinod,
 		},
 	];
-
 	// Auto-rotate carousel
 	useEffect(() => {
 		if (!isPaused) {
@@ -262,7 +261,7 @@ const AdvisoryBoard = () => {
 											<img
 												src={member.image}
 												alt={member.name}
-												className={`w-full h-full object-cover transition-all duration-700 ${
+												className={`w-full h-full top-0 object-contain transition-all duration-700 ${
 													isCenter ? 'scale-110' : 'scale-100 grayscale'
 												}`}
 											/>
@@ -370,7 +369,6 @@ const AdvisoryBoard = () => {
 				</div>
 
 				{/* Dots Indicator */}
-				
 
 				{/* Current Member Info - Large Display */}
 				{/* <div className="mt-2 text-center">
@@ -380,7 +378,7 @@ const AdvisoryBoard = () => {
 						<p className="text-blue-700">{advisoryMembers[currentIndex].title}</p>
 					</div>
 				</div> */}
-                <div className="flex justify-center gap-2 mt-10">
+				<div className="flex justify-center gap-2 mt-10">
 					{advisoryMembers.map((_, index) => (
 						<button
 							key={index}
@@ -418,10 +416,6 @@ const AdvisoryBoard = () => {
 };
 
 export default AdvisoryBoard;
-
-
-
-
 
 // import React, { useState, useEffect, useRef } from 'react';
 
@@ -656,8 +650,8 @@ export default AdvisoryBoard;
 // 									className="absolute transition-all duration-1000 ease-out"
 // 									style={{
 // 										transform: `
-//                       translateX(${position.x}px) 
-//                       translateZ(${position.z}px) 
+//                       translateX(${position.x}px)
+//                       translateZ(${position.z}px)
 //                       scale(${position.scale})
 //                       rotateY(${position.rotate}deg)
 //                     `,
@@ -795,7 +789,6 @@ export default AdvisoryBoard;
 // 				</div>
 
 // 				{/* Dots Indicator */}
-				
 
 // 				{/* Current Member Info - Large Display */}
 // 				<div className="mt-2 text-center">

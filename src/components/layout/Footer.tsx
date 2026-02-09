@@ -127,7 +127,7 @@ export default function Footer() {
           </div>
           <div className="text-center mt-4">
             <p className="text-slate-500 text-xs">
-              Internal Release - 02 - Build v1.00.0045 Date: 08-Feb-2026
+              Internal Release - 02 - Build v1.00.0045 Date: 03-Aug-2022
             </p>
           </div>
         </div>
