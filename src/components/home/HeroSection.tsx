@@ -1,127 +1,152 @@
 import React, { useState, useEffect } from 'react';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 import logo from '../../assets/rkdflogo.png';
+import img1 from '../../assets/rkdf1.png';
+import img2 from '../../assets/rkdf2.png'
+import img3 from '../../assets/rkdf3.png'
+import img4 from '../../assets/rkdf4.png'
+import img5 from '../../assets/rkdf5.png'
+import img6 from '../../assets/rkdf6.png'
+import img7 from '../../assets/rkdf7.png'
+import img8 from '../../assets/rkdf8.png'
+import img9 from '../../assets/rkdf9.png'
+import img10 from '../../assets/rkdf10.png'
+import img11 from '../../assets/rkdf11.png'
+import img12 from '../../assets/rkdf12.png'
+import img13 from '../../assets/rkdf13.png'
+import img14 from '../../assets/rkdf14.png'
+import img15 from '../../assets/rkdf15.png'
+import img16 from '../../assets/rkdf16.png'
+import img17 from '../../assets/rkdf17.png'
+import img21 from '../../assets/rkdf21.png'
+
 export default function HeroSection() {
   const [activeIndex, setActiveIndex] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
   
   const images = [
     {
-      url: "https://images.unsplash.com/photo-1562774053-701939374585?w=1600&h=600&fit=crop&auto=format",
-      alt: "University Campus Building",
-      text: "RKDF University"
-    },
-    {
-      url: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=1600&h=600&fit=crop&auto=format",
-      alt: "Students in Library",
-      text: "Academic Excellence"
-    },
-    {
-      url: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=1600&h=600&fit=crop&auto=format",
-      alt: "Graduation Ceremony",
-      text: "Celebrating Success"
-    },
-    {
-      url: "https://images.unsplash.com/photo-1498243691581-b145c3f54a5a?w=1600&h=600&fit=crop&auto=format",
-      alt: "Campus Courtyard",
-      text: "Campus Life"
-    },
-    {
-      url: "https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?w=1600&h=600&fit=crop&auto=format",
-      alt: "Research Lab",
-      text: "Research & Innovation"
-    },
-    {
-      url: "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=1600&h=600&fit=crop&auto=format",
-      alt: "Lecture Hall",
-      text: "Modern Learning Spaces"
-    },
-    {
-      url: "https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?w=1600&h=600&fit=crop&auto=format",
-      alt: "Students Studying",
-      text: "Quality Education"
-    },
-    {
-      url: "https://images.unsplash.com/photo-1571260899304-425eee4c7efc?w=1600&h=600&fit=crop&auto=format",
-      alt: "Sports Facility",
-      text: "Sports & Wellness"
-    },
-    {
-      url: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=1600&h=600&fit=crop&auto=format",
-      alt: "Group Study",
-      text: "Collaborative Learning"
-    },
-    {
-      url: "https://images.unsplash.com/photo-1532012197267-da84d127e765?w=1600&h=600&fit=crop&auto=format",
-      alt: "Library Collection",
-      text: "World-Class Library"
-    },
-    {
-      url: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=1600&h=600&fit=crop&auto=format",
-      alt: "Science Lab",
-      text: "Advanced Laboratories"
-    },
-    {
-      url: "https://images.unsplash.com/photo-1519452635265-7b1fbfd1e4e0?w=1600&h=600&fit=crop&auto=format",
-      alt: "International Students",
-      text: "Global Community"
-    },
-    {
-      url: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=1600&h=600&fit=crop&auto=format",
-      alt: "Team Project",
-      text: "Innovation Hub"
-    },
-    {
-      url: "https://images.unsplash.com/photo-1509062522246-3755977927d7?w=1600&h=600&fit=crop&auto=format",
-      alt: "Campus Events",
-      text: "Cultural Excellence"
-    },
-    {
-      url: "https://images.unsplash.com/photo-1523580494863-6f3031224c94?w=1600&h=600&fit=crop&auto=format",
-      alt: "Computer Lab",
-      text: "Digital Learning"
-    },
-    {
-      url: "https://images.unsplash.com/photo-1533230408708-8f9f91d1235a?w=1600&h=600&fit=crop&auto=format",
-      alt: "Students Walking",
-      text: "Green Campus"
-    },
-    {
-      url: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=1600&h=600&fit=crop&auto=format",
-      alt: "Convocation",
-      text: "Alumni Network"
-    },
-    {
-      url: "https://images.unsplash.com/photo-1488190211105-8b0e65b80b4e?w=1600&h=600&fit=crop&auto=format",
+      url: img21,
       alt: "Study Group",
-      text: "Peer Learning"
+      text: ""
     },
     {
-      url: "https://images.unsplash.com/photo-1529070538774-1843cb3265df?w=1600&h=600&fit=crop&auto=format",
-      alt: "Art & Design",
-      text: "Creative Programs"
+      url: img1,
+      alt: "University Campus Building",
+      text: ""
     },
     {
-      url: "https://images.unsplash.com/photo-1523580846011-d3a5bc25702b?w=1600&h=600&fit=crop&auto=format",
-      alt: "Campus Green Space",
-      text: "Sustainable Future"
-    }
+      url: img2,
+      alt: "Students in Library",
+      text: ""
+    },
+    {
+      url: img3,
+      alt: "Graduation Ceremony",
+      text: ""
+    },
+    {
+      url: img4,
+      alt: "Campus Courtyard",
+      text: ""
+    },
+    {
+      url: img5,
+      alt: "Research Lab",
+      text: ""
+    },
+    {
+      url: img6,
+      alt: "Lecture Hall",
+      text: ""
+    },
+    {
+      url: img7,
+      alt: "Students Studying",
+      text: ""
+    },
+    {
+      url: img8,
+      alt: "Sports Facility",
+      text: ""
+    },
+    {
+      url: img9,
+      alt: "Group Study",
+      text: ""
+    },
+    {
+      url: img10,
+      alt: "Library Collection",
+      text: ""
+    },
+    {
+      url: img11,
+      alt: "Science Lab",
+      text: ""
+    },
+    {
+      url: img12,
+      alt: "International Students",
+      text: ""
+    },
+    {
+      url: img13,
+      alt: "Team Project",
+      text: ""
+    },
+    {
+      url: img14,
+      alt: "Campus Events",
+      text: ""
+    },
+    {
+      url: img15,
+      alt: "Computer Lab",
+      text: ""
+    },
+    {
+      url: img16,
+      alt: "Students Walking",
+      text: ""
+    },
+    {
+      url: img17,
+      alt: "Convocation",
+      text: ""
+    },
   ];
 
+  const goToPrevious = () => {
+    setActiveIndex((current) => (current - 1 + images.length) % images.length);
+  };
+
+  const goToNext = () => {
+    setActiveIndex((current) => (current + 1) % images.length);
+  };
+
   useEffect(() => {
-    const interval = setInterval(() => {
-      setActiveIndex((current) => (current + 1) % images.length);
-    }, 2000); // 2 second interval
-    
-    return () => clearInterval(interval);
-  }, []);
+    if (!isPaused) {
+      const interval = setInterval(() => {
+        setActiveIndex((current) => (current + 1) % images.length);
+      }, 2000); // 2 second interval
+      
+      return () => clearInterval(interval);
+    }
+  }, [isPaused, images.length]);
 
   return (
     <div className="w-full">
       {/* Hero Image Carousel */}
-      <div className="relative w-full h-[80vh] overflow-hidden">
+      <div 
+        className="relative bg-white w-full h-[30vh] sm:h-[60vh] md:h-[70vh] overflow-hidden group"
+        onMouseEnter={() => setIsPaused(true)}
+        onMouseLeave={() => setIsPaused(false)}
+      >
         {images.map((image, index) => (
           <div
             key={index}
-            className="absolute inset-0 transition-opacity duration-1000 ease-in-out"
+            className="absolute inset-0 transition-opacity bg-white duration-1000 ease-in-out"
             style={{
               opacity: activeIndex === index ? 1 : 0,
               zIndex: activeIndex === index ? 1 : 0
@@ -130,10 +155,8 @@ export default function HeroSection() {
             <img 
               src={image.url}
               alt={image.alt}
-              className="w-full h-full object-cover"
+              className="w-full h-full object-contain object-center"
             />
-            {/* Dark overlay for better text visibility */}
-            <div className="absolute inset-0 bg-black/20"></div>
             
             {/* Centered text overlay */}
             <div className="absolute inset-0 flex items-center justify-center">
@@ -144,8 +167,26 @@ export default function HeroSection() {
           </div>
         ))}
 
+        {/* Previous Button */}
+        <button
+          onClick={goToPrevious}
+          className="absolute left-2 md:left-4 top-1/2 -translate-y-1/2 z-10 bg-white/80 hover:bg-white text-gray-800 p-2 md:p-3 rounded-full shadow-lg transition-all duration-300"
+          aria-label="Previous image"
+        >
+          <ChevronLeft className="w-5 h-5 md:w-6 md:h-6" />
+        </button>
+
+        {/* Next Button */}
+        <button
+          onClick={goToNext}
+          className="absolute right-2 md:right-4 top-1/2 -translate-y-1/2 z-10 bg-white/80 hover:bg-white text-gray-800 p-2 md:p-3 rounded-full shadow-lg transition-all duration-300"
+          aria-label="Next image"
+        >
+          <ChevronRight className="w-5 h-5 md:w-6 md:h-6" />
+        </button>
+
         {/* Progress dots indicator */}
-        <div className="absolute bottom-8 left-0 right-0 flex justify-center space-x-2 z-10">
+        {/* <div className="absolute bottom-4 md:bottom-8 left-0 right-0 flex justify-center space-x-2 z-10 px-4">
           {images.map((_, index) => (
             <button
               key={index}
@@ -156,30 +197,33 @@ export default function HeroSection() {
               <div
                 className="rounded-full transition-all duration-300"
                 style={{
-                  width: activeIndex === index ? '32px' : '8px',
-                  height: '8px',
-                  backgroundColor: activeIndex === index ? '#ffffff' : 'rgba(255, 255, 255, 0.5)'
+                  width: activeIndex === index ? '24px' : '6px',
+                  height: '6px',
+                  backgroundColor: activeIndex === index ? '#4a90c8' : 'rgba(74, 144, 200, 0.5)'
                 }}
               ></div>
             </button>
           ))}
-        </div>
+        </div> */}
       </div>
 
       {/* Welcome Section */}
-      <div className="bg-white py-16 px-4">
+      <div className="bg-white py-4 px-4 mb-8">
         <div className="max-w-6xl mx-auto text-center">
-          <div className="flex items-center justify-center mb-6">
+          <div className="flex flex-col md:flex-row items-center justify-center mb-3 gap-2 md:gap-0">
             {/* Logo placeholder - replace with actual logo */}
-           <div className="hidden md:flex w-16 h-16 bg-red-600 rounded-full items-center justify-center mr-4">
-             <img src={logo} alt="" />
+           <div className="flex md:hidden w-12 h-12 bg-red-600 rounded-full items-center justify-center">
+             <img src={logo} alt="" className="w-full h-full object-contain" />
             </div>
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900">
+           <div className="hidden md:flex w-16 h-16 bg-red-600 rounded-full items-center justify-center mr-4">
+             <img src={logo} alt="" className="w-full h-full object-contain" />
+            </div>
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900">
               Welcome to RKDF University, Bhopal, India
             </h1>
           </div>
           
-          <p className="text-lg md:text-xl text-gray-700 mt-4">
+          <p className="text-base sm:text-lg md:text-xl text-gray-700 mt-2">
             Launch <a href="#" className="text-blue-600 hover:underline">Student Portal</a> of RKDF University
           </p>
         </div>
