@@ -25,14 +25,14 @@ const Exploredepartment = () => {
       id: 1,
       title: "Engineering & Technology",
       image: f1,
-      size: "big",
+      size: "regular",
       link: "/faculties/engineering-technology"
     },
     {
       id: 2,
       title: "Homeopathy & Medical Science",
       image: f2,
-      size: "tall",
+      size: "regular",
       link: "/faculties/homeopathy-medical-science"
     },
     {
@@ -46,7 +46,7 @@ const Exploredepartment = () => {
       id: 4,
       title: "Management",
       image: f4,
-      size: "big",
+      size: "regular",
       link: "/faculties/management"
     },
     {
@@ -60,28 +60,28 @@ const Exploredepartment = () => {
       id: 6,
       title: "Commerce and Management",
       image: f6,
-      size: "tall",
+      size: "regular",
       link: "/faculties/commerce-management"
     },
     {
       id: 7,
       title: "Education",
       image: f7,
-      size: "tall",
+      size: "regular",
       link: "/faculties/education"
     },
     {
       id: 8,
       title: "Library & Information Science",
       image: f8,
-      size: "tall",
+      size: "regular",
       link: "/faculties/library-information-science"
     },
     {
       id: 9,
       title: "Computer Application",
       image: f9,
-      size: "big",
+      size: "regular",
       link: "/faculties/computer-application"
     },
     {
@@ -102,14 +102,14 @@ const Exploredepartment = () => {
       id: 12,
       title: "Architecture",
       image: f12,
-      size: "tall",
+      size: "regular",
       link: "/faculties/architecture"
     },
     {
       id: 13,
       title: "Ayurved Courses",
       image: f13,
-      size: "big",
+      size: "regular",
       link: "/faculties/ayurved-courses"
     },
     {
@@ -154,7 +154,7 @@ const Exploredepartment = () => {
     <section className="bg-gray-50 py-6 sm:py-10 px-4 sm:px-10 text-center ">
       {/* Header */}
       <div className="max-w-7xl mx-auto mb-8 text-center">
-        <h2 className="text-3xl sm:text-4xl font-bold mb-2">
+        <h2 className="text-3xl sm:text-4xl font-bold mb-2 text-blue-900">
           Explore Our <span className="text-red-700">Faculties</span>
         </h2>
 
@@ -167,93 +167,99 @@ const Exploredepartment = () => {
           </div>
       </div>
 
-      {/* Grid with varied sizes */}
-      <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-1 auto-rows-[220px]">
-        {departments.map((dept) => (
-          <Link
-            key={dept.id}
-            to={dept.link}
-            className={`relative overflow-hidden rounded-lg group cursor-pointer transition-all duration-700 ${getSizeClasses(dept.size)}`}
-            onMouseEnter={() => setHoveredCard(dept.id)}
-            onMouseLeave={() => setHoveredCard(null)}
-          >
-            {/* Image */}
-            <img
-              src={dept.image}
-              alt={dept.title}
-              className="absolute inset-0 w-full h-full object-contain transition-all duration-700 group-hover:scale-110"
-            />
+      {/* Grid with varied sizes - Last item centered */}
+      <div className="max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-1 auto-rows-[220px]">
+          {departments.map((dept, index) => (
+            <Link
+              key={dept.id}
+              to={dept.link}
+              className={`relative overflow-hidden rounded-lg group cursor-pointer transition-all duration-700 ${getSizeClasses(dept.size)} ${
+                index === departments.length - 1 && departments.length % 3 === 1 
+                  ? 'sm:col-start-1 lg:col-start-2' 
+                  : ''
+              }`}
+              onMouseEnter={() => setHoveredCard(dept.id)}
+              onMouseLeave={() => setHoveredCard(null)}
+            >
+              {/* Image */}
+              <img
+                src={dept.image}
+                alt={dept.title}
+                className="absolute inset-0 w-full h-full object-contain transition-all duration-700 group-hover:scale-110"
+              />
 
-            {/* Dark overlay - fades on hover */}
-            <div className="absolute inset-0 bg-black/70 transition-all duration-700 group-hover:bg-black/20" />
+              {/* Dark overlay - fades on hover */}
+              <div className="absolute inset-0 bg-black/70 transition-all duration-700 group-hover:bg-black/20" />
 
-            {/* Content */}
-            <div className="absolute inset-0 flex flex-col justify-between p-6">
-              <div></div>
-              
-              <div className="flex items-end justify-between">
-                <h3 className="text-white text-2xl font-bold transition-all duration-500 group-hover:translate-y-[-8px]">
-                  {dept.title}
-                </h3>
+              {/* Content */}
+              <div className="absolute inset-0 flex flex-col justify-between p-6">
+                <div></div>
+                
+                <div className="flex items-end justify-between">
+                  <h3 className="text-white text-2xl font-bold transition-all duration-500 group-hover:translate-y-[-8px]">
+                    {dept.title}
+                  </h3>
 
-                {/* Arrow Button with Circle Animation */}
-                <div className="relative flex-shrink-0">
-                  {/* Animated Circle Border */}
-                  <svg
-                    className="absolute inset-0 w-12 h-12 -rotate-90 transition-opacity duration-300"
-                    style={{
-                      opacity: hoveredCard === dept.id ? 1 : 0
-                    }}
-                  >
-                    <circle
-                      cx="24"
-                      cy="24"
-                      r="22"
-                      fill="none"
-                      stroke="white"
-                      strokeWidth="2"
-                      strokeDasharray="138.23"
-                      strokeDashoffset="138.23"
-                      className={hoveredCard === dept.id ? "animate-[drawCircle_0.8s_ease-out_forwards]" : ""}
-                    />
-                  </svg>
-
-                  {/* Button Content */}
-                  <div className="relative w-12 h-12 rounded-full border-2 border-white/40 flex items-center justify-center transition-all duration-500 group-hover:border-white group-hover:bg-white/10 group-hover:scale-110">
-                    {/* Arrow Icon */}
+                  {/* Arrow Button with Circle Animation */}
+                  <div className="relative flex-shrink-0">
+                    {/* Animated Circle Border */}
                     <svg
-                      className={`w-5 h-5 text-white transition-all duration-500 ${
-                        hoveredCard === dept.id ? "translate-x-1 opacity-0" : "opacity-100"
-                      }`}
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
+                      className="absolute inset-0 w-12 h-12 -rotate-90 transition-opacity duration-300"
+                      style={{
+                        opacity: hoveredCard === dept.id ? 1 : 0
+                      }}
                     >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M9 5l7 7-7 7"
+                      <circle
+                        cx="24"
+                        cy="24"
+                        r="22"
+                        fill="none"
+                        stroke="white"
+                        strokeWidth="2"
+                        strokeDasharray="138.23"
+                        strokeDashoffset="138.23"
+                        className={hoveredCard === dept.id ? "animate-[drawCircle_0.8s_ease-out_forwards]" : ""}
                       />
                     </svg>
 
-                    {/* Explore Now Text */}
-                    <span
-                      className={`absolute whitespace-nowrap text-white text-sm font-semibold transition-all duration-500 ${
-                        hoveredCard === dept.id
-                          ? "opacity-100 translate-x-0"
-                          : "opacity-0 translate-x-4"
-                      }`}
-                      style={{ right: "60px" }}
-                    >
-                      Explore Now
-                    </span>
+                    {/* Button Content */}
+                    <div className="relative w-12 h-12 rounded-full border-2 border-white/40 flex items-center justify-center transition-all duration-500 group-hover:border-white group-hover:bg-white/10 group-hover:scale-110">
+                      {/* Arrow Icon */}
+                      <svg
+                        className={`w-5 h-5 text-white transition-all duration-500 ${
+                          hoveredCard === dept.id ? "translate-x-1 opacity-0" : "opacity-100"
+                        }`}
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M9 5l7 7-7 7"
+                        />
+                      </svg>
+
+                      {/* Explore Now Text */}
+                      <span
+                        className={`absolute whitespace-nowrap text-white text-sm font-semibold transition-all duration-500 ${
+                          hoveredCard === dept.id
+                            ? "opacity-100 translate-x-0"
+                            : "opacity-0 translate-x-4"
+                        }`}
+                        style={{ bottom: "140px",right:"10px" }}
+                      >
+                        Explore Now
+                      </span>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-          </Link>
-        ))}
+            </Link>
+          ))}
+        </div>
       </div>
 
       <style>{`

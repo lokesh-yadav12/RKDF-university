@@ -31,8 +31,8 @@ export default function About() {
           transition={{ duration: 0.6 }}
           className="text-center max-w-3xl mx-auto"
         >
-          <h1 className="text-5xl font-extrabold bg-white text-gray-900 bg-clip-text ">
-            About RKDF University
+          <h1 className="text-5xl font-extrabold bg-white text-red-700 bg-clip-text ">
+            <span className="text-blue-900 font-extrabold">About </span>RKDF University
           </h1>
           <p className="mt-6 text-lg text-gray-600">
             Shaping futures through accessible, inclusive, and quality higher education in Central India.

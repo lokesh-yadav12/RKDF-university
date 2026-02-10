@@ -18,26 +18,33 @@ import React from 'react'
 import OurAchievements from '@/components/home/Achievement'
 import Amenities from '@/components/home/Amenities'
 import About from '@/components/home/About'
-import AdmissionEnquiry from '@/components/home/AdmissionEnquiry'
+import FloatingEnquiryButton from './Floatingenquirybutton'
+//import AdmissionEnquiry from '@/components/home/AdmissionEnquiry'
 
 const Home = () => {
   return (
     <div className="antialiased bg-white">
+      <FloatingEnquiryButton/>
       <HeroSection />
-      <StatsSection />
       <AnnouncementsSection/>
-      <EventsSection />
+       <EventsSection />
+      <StatsSection />
+      <About/>
+      
+     
       <ChancellorNoticesSection/>
       <ViceChancellorNoticesSection/>
+      <OurInstitutions/>
       {/* <AboutSection /> */}
       <AcademicPrograms />
-      <AdvisoryBoard/>
-      <About/>
-      <OurInstitutions/>
-      <LinkItem/>
+      
+       <Amenities/>
       <OurAchievements/>
-      <Amenities/>
-      <AdmissionEnquiry/>
+      <AdvisoryBoard/>
+      <LinkItem/>
+      
+     
+      {/* <AdmissionEnquiry/> */}
       {/* <CampusLife />
       <Upcomingevents/>
       <TestimonialsSection />

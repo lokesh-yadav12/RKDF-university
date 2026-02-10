@@ -49,7 +49,7 @@ const item = {
 
 export default function OurAchievements() {
   return (
-    <section className="relative overflow-hidden py-12 px-6 bg-white">
+    <section className="relative overflow-hidden py-16 px-6 bg-white">
       {/* Decorative Glow */}
       {/* <div className="absolute top-20 left-10 w-72 h-72 bg-blue-300/20 rounded-full blur-3xl" />
       <div className="absolute bottom-20 right-10 w-72 h-72 bg-sky-400/20 rounded-full blur-3xl" /> */}
@@ -61,7 +61,7 @@ export default function OurAchievements() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-12"
+          className="text-center mb-8"
         >
           <div className="inline-flex items-center gap-4 mb-6">
             <span className="h-[1px] w-16 bg-blue-600" />
@@ -71,8 +71,8 @@ export default function OurAchievements() {
             <span className="h-[1px] w-16 bg-blue-600" />
           </div>
 
-          <h1 className="text-4xl md:text-5xl font-semibold text-slate-900">
-            Our <span className="text-blue-600">Achievements</span>
+          <h1 className="text-4xl md:text-5xl font-semibold text-blue-900">
+            Our <span className="text-red-700">Achievements</span>
           </h1>
 
           <p className="mt-4 text-lg text-slate-600 max-w-2xl mx-auto">

@@ -58,32 +58,15 @@ const DPSLoadingCorporate: React.FC<DPSLoadingProps> = ({
         }}
       />
 
-      <div className="relative z-10 flex flex-col items-center justify-center space-y-16 px-4 mt-60">
+      <div className="relative z-10 flex flex-col items-center justify-center space-y-16 px-4 mt-80">
         
         {/* ===== LOGO WITH MODERN FRAME ===== */}
         <div className="relative">
           
           {/* Animated corner frames */}
-          <div className="absolute -inset-8">
-            {/* Top-left corner */}
-            <div className="absolute top-0 left-0 w-12 h-12 border-t-2 border-l-2 border-[#690B22]"
-                 style={{ animation: 'drawCorner 1.5s ease forwards' }} />
-            
-            {/* Top-right corner */}
-            <div className="absolute top-0 right-0 w-12 h-12 border-t-2 border-r-2 border-[#690B22]"
-                 style={{ animation: 'drawCorner 1.5s ease forwards 0.2s' }} />
-            
-            {/* Bottom-left corner */}
-            <div className="absolute bottom-0 left-0 w-12 h-12 border-b-2 border-l-2 border-[#690B22]"
-                 style={{ animation: 'drawCorner 1.5s ease forwards 0.4s' }} />
-            
-            {/* Bottom-right corner */}
-            <div className="absolute bottom-0 right-0 w-12 h-12 border-b-2 border-r-2 border-[#690B22]"
-                 style={{ animation: 'drawCorner 1.5s ease forwards 0.6s' }} />
-          </div>
-
+          
           {/* Scanning line effect */}
-          <div 
+          {/* <div 
             className="absolute inset-0 overflow-hidden"
             style={{ animation: 'fadeIn 2s ease forwards' }}
           >
@@ -91,7 +74,7 @@ const DPSLoadingCorporate: React.FC<DPSLoadingProps> = ({
               className="w-full h-0.5 bg-gradient-to-r from-transparent via-[#690B22] to-transparent opacity-50"
               style={{ animation: 'scan 2s ease-in-out infinite' }}
             />
-          </div>
+          </div> */}
 
           {/* Logo container */}
           <div

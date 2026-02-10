@@ -1,58 +1,58 @@
-import React, { useState } from 'react';
+// import React, { useState } from 'react';
 import { ExternalLink, Bell, ChevronRight, Quote, Calendar, TrendingUp } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import sadhna from '../../assets/sadhna.png'
 
-interface Notice {
-  id: number;
-  title: string;
-  date: string;
-  link: string;
-  isNew?: boolean;
-}
+// interface Notice {
+//   id: number;
+//   title: string;
+//   date: string;
+//   link: string;
+//   isNew?: boolean;
+// }
 
-const notices: Notice[] = [
-  {
-    id: 1,
-    title: "Academic Calendar 2023-24 Released",
-    date: "15 March 2023",
-    link: "/notices/academic-calendar-2023",
-    isNew: true
-  },
-  {
-    id: 2,
-    title: "Final Examination Schedule - May 2023",
-    date: "10 March 2023",
-    link: "/notices/exam-schedule-may-2023",
-    isNew: true
-  },
-  {
-    id: 3,
-    title: "Summer Internship Program Registration",
-    date: "05 March 2023",
-    link: "/notices/summer-internship-2023"
-  },
-  {
-    id: 4,
-    title: "Research Paper Submission Deadline Extended",
-    date: "01 March 2023",
-    link: "/notices/research-paper-deadline"
-  },
-  {
-    id: 5,
-    title: "Campus Recruitment Drive - TCS & Infosys",
-    date: "25 February 2023",
-    link: "/notices/campus-recruitment-feb-2023"
-  }
-];
+// const notices: Notice[] = [
+//   {
+//     id: 1,
+//     title: "Academic Calendar 2023-24 Released",
+//     date: "15 March 2023",
+//     link: "/notices/academic-calendar-2023",
+//     isNew: true
+//   },
+//   {
+//     id: 2,
+//     title: "Final Examination Schedule - May 2023",
+//     date: "10 March 2023",
+//     link: "/notices/exam-schedule-may-2023",
+//     isNew: true
+//   },
+//   {
+//     id: 3,
+//     title: "Summer Internship Program Registration",
+//     date: "05 March 2023",
+//     link: "/notices/summer-internship-2023"
+//   },
+//   {
+//     id: 4,
+//     title: "Research Paper Submission Deadline Extended",
+//     date: "01 March 2023",
+//     link: "/notices/research-paper-deadline"
+//   },
+//   {
+//     id: 5,
+//     title: "Campus Recruitment Drive - TCS & Infosys",
+//     date: "25 February 2023",
+//     link: "/notices/campus-recruitment-feb-2023"
+//   }
+// ];
 
 export default function ChancellorNoticesSection() {
-  const [hoveredNotice, setHoveredNotice] = useState<number | null>(null);
+  // const [hoveredNotice, setHoveredNotice] = useState<number | null>(null);
 
   return (
     <section className="relative py-8 bg-white">
       {/* Chancellor Section - Full Width Banner Style */}
-      <div className="relative mb-10 overflow-hidden">
+      <div className="relative mb-2 overflow-hidden">
         {/* Background with Diagonal Split */}
         <div className="absolute inset-0 bg-white"></div>
         <div className="absolute inset-0 opacity-10" style={{
@@ -131,9 +131,9 @@ export default function ChancellorNoticesSection() {
       </div>
 
       {/* Notices Section - Modern Timeline Style */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Header */}
-        <div className="text-center mb-6 sm:mb-8">
+      {/* <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"> */}
+        
+        {/* <div className="text-center mb-6 sm:mb-8">
           <div className="inline-flex items-center gap-2 sm:gap-3 mb-3 sm:mb-4">
             <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-red-500 to-orange-500 rounded-xl flex items-center justify-center shadow-lg rotate-3">
               <Bell className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
@@ -141,10 +141,10 @@ export default function ChancellorNoticesSection() {
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-900">Latest Notices & Updates</h2>
           </div>
           <p className="text-slate-600 text-sm sm:text-base lg:text-lg px-4">Stay informed with our latest announcements and important information</p>
-        </div>
+        </div> */}
 
         {/* Notices Grid - Card Style */}
-        <div className="grid gap-3 sm:gap-4 mb-6">
+        {/* <div className="grid gap-3 sm:gap-4 mb-6">
           {notices.map((notice, index) => (
             <Link
               key={notice.id}
@@ -158,7 +158,7 @@ export default function ChancellorNoticesSection() {
                   ? 'border-[#4a90c8] shadow-xl shadow-blue-500/10 sm:-translate-y-1'
                   : 'border-slate-200 hover:border-slate-300 shadow-md'
               }`}>
-                {/* Number Badge */}
+               
                 <div className={`absolute -left-3 sm:-left-4 top-4 sm:top-6 w-8 h-8 sm:w-10 sm:h-10 rounded-lg sm:rounded-xl flex items-center justify-center font-bold text-base sm:text-lg shadow-lg transition-all duration-300 ${
                   hoveredNotice === notice.id
                     ? 'bg-gradient-to-br from-[#4a90c8] to-[#5a9fd8] text-white scale-110'
@@ -168,7 +168,7 @@ export default function ChancellorNoticesSection() {
                 </div>
 
                 <div className="flex items-start justify-between gap-3 sm:gap-6 pl-6 sm:pl-8">
-                  {/* Content */}
+                  
                   <div className="flex-1 space-y-2 sm:space-y-3">
                     <div className="flex items-start gap-2 sm:gap-3">
                       <h3 className="text-base sm:text-lg lg:text-xl font-bold text-slate-900 group-hover:text-[#4a90c8] transition-colors flex-1">
@@ -188,7 +188,7 @@ export default function ChancellorNoticesSection() {
                     </div>
                   </div>
 
-                  {/* Arrow Icon */}
+                  
                   <div className={`flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 rounded-lg sm:rounded-xl flex items-center justify-center transition-all duration-300 ${
                     hoveredNotice === notice.id
                       ? 'bg-[#4a90c8] text-white rotate-12 scale-110'
@@ -198,7 +198,7 @@ export default function ChancellorNoticesSection() {
                   </div>
                 </div>
 
-                {/* Progress Bar */}
+             
                 <div className="absolute bottom-0 left-0 right-0 h-1 bg-slate-100 rounded-b-xl sm:rounded-b-2xl overflow-hidden">
                   <div 
                     className={`h-full bg-gradient-to-r from-[#4a90c8] to-[#5a9fd8] transition-all duration-300 ${
@@ -209,10 +209,10 @@ export default function ChancellorNoticesSection() {
               </div>
             </Link>
           ))}
-        </div>
+        </div> */}
 
         {/* View All Button */}
-        <div className="text-center">
+        {/* <div className="text-center">
           <Link
             to="/notices"
             className="inline-flex items-center gap-2 sm:gap-3 bg-[#5a9fd8] hover:bg-blue-400 hover:text-black text-white px-8 sm:px-10 py-3 sm:py-4 rounded-xl text-sm sm:text-base font-bold transition-all duration-300 group shadow-xl hover:shadow-2xl hover:scale-105"
@@ -222,8 +222,11 @@ export default function ChancellorNoticesSection() {
               <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
             </div>
           </Link>
-        </div>
-      </div>
+        </div> */}
+
+
+
+      {/* </div> */}
 
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&display=swap');

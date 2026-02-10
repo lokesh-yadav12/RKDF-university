@@ -8,6 +8,8 @@ import Admissions from './pages/Admission';
 import DPSLoading from './components/ui/Loading';
 import ChancellorMessagePage from './components/home/Chancellormessagepage';
 import ViceChancellorMessagePage from './components/home/ViceChancellormessagepage';
+//import AdmissionEnquiry from './components/home/AdmissionEnquiry';
+import FloatingEnquiryButton from './pages/Floatingenquirybutton';
 
 
 const Home = lazy(() => import('./pages/Home'));
@@ -52,6 +54,7 @@ function App() {
 				</div>
 			}
 		>
+			<FloatingEnquiryButton/>
 			<Routes>
 				<Route
 					path="/"

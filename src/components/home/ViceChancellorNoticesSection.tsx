@@ -50,9 +50,9 @@ export default function ViceChancellorNoticesSection() {
 	const [hoveredNotice, setHoveredNotice] = useState<number | null>(null);
 
 	return (
-		<section className="relative py-6 sm:py-10 bg-white">
+		<section className="relative md:max-h-screen py-6 sm:py-8 bg-white">
 			{/* Vice-Chancellor Section - Full Width Banner Style */}
-			<div className="relative mb-6 sm:mb-8 overflow-hidden">
+			<div className="relative mb-2 sm:mb-3 overflow-hidden">
 				{/* Background with Diagonal Split */}
 				<div className="absolute inset-0 bg-white"></div>
 				<div className="absolute inset-0 opacity-10" style={{
@@ -130,100 +130,7 @@ export default function ViceChancellorNoticesSection() {
 				</div>
 			</div>
 
-			{/* Notices Section - Modern Timeline Style */}
-			<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-				{/* Section Header */}
-				<div className="text-center mb-6 sm:mb-8 lg:mb-12">
-					<div className="inline-flex items-center gap-2 sm:gap-3 mb-3 sm:mb-4">
-						<div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-red-500 to-orange-500 rounded-xl flex items-center justify-center shadow-lg rotate-3">
-							<Bell className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
-						</div>
-						<h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-slate-900">Latest Notices & Updates</h2>
-					</div>
-					<p className="text-slate-600 text-sm sm:text-base lg:text-lg px-4">Stay informed with our latest announcements and important information</p>
-				</div>
-
-				{/* Notices Grid - Card Style */}
-				<div className="grid gap-3 sm:gap-4 mb-6 sm:mb-8">
-					{notices.map((notice, index) => (
-						<Link
-							key={notice.id}
-							to={notice.link}
-							className="group relative"
-							onMouseEnter={() => setHoveredNotice(notice.id)}
-							onMouseLeave={() => setHoveredNotice(null)}
-						>
-							<div className={`relative bg-white border-2 rounded-xl sm:rounded-2xl p-4 sm:p-6 transition-all duration-300 ${
-								hoveredNotice === notice.id
-									? 'border-[#4a90c8] shadow-xl shadow-blue-500/10 sm:-translate-y-1'
-									: 'border-slate-200 hover:border-slate-300 shadow-md'
-							}`}>
-								{/* Number Badge */}
-								<div className={`absolute -left-3 sm:-left-4 top-4 sm:top-6 w-8 h-8 sm:w-10 sm:h-10 rounded-lg sm:rounded-xl flex items-center justify-center font-bold text-base sm:text-lg shadow-lg transition-all duration-300 ${
-									hoveredNotice === notice.id
-										? 'bg-gradient-to-br from-[#4a90c8] to-[#5a9fd8] text-white scale-110'
-										: 'bg-slate-100 text-slate-600'
-								}`}>
-									{index + 1}
-								</div>
-
-								<div className="flex items-start justify-between gap-3 sm:gap-6 pl-6 sm:pl-8">
-									{/* Content */}
-									<div className="flex-1 space-y-2 sm:space-y-3">
-										<div className="flex items-start gap-2 sm:gap-3">
-											<h3 className="text-base sm:text-lg lg:text-xl font-bold text-slate-900 group-hover:text-[#4a90c8] transition-colors flex-1">
-												{notice.title}
-											</h3>
-											{notice.isNew && (
-												<span className="flex-shrink-0 inline-flex items-center gap-1 bg-gradient-to-r from-red-500 to-pink-500 text-white text-[10px] sm:text-xs font-bold px-2 sm:px-3 py-0.5 sm:py-1 rounded-full shadow-lg animate-bounce">
-													<span className="w-1 h-1 sm:w-1.5 sm:h-1.5 bg-white rounded-full"></span>
-													NEW
-												</span>
-											)}
-										</div>
-										
-										<div className="flex items-center gap-2 sm:gap-3 text-slate-500">
-											<Calendar className="w-3 h-3 sm:w-4 sm:h-4" />
-											<span className="text-xs sm:text-sm font-medium">{notice.date}</span>
-										</div>
-									</div>
-
-									{/* Arrow Icon */}
-									<div className={`flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 rounded-lg sm:rounded-xl flex items-center justify-center transition-all duration-300 ${
-										hoveredNotice === notice.id
-											? 'bg-[#4a90c8] text-white rotate-12 scale-110'
-											: 'bg-slate-100 text-slate-400'
-									}`}>
-										<ExternalLink className="w-4 h-4 sm:w-5 sm:h-5" />
-									</div>
-								</div>
-
-								{/* Progress Bar */}
-								<div className="absolute bottom-0 left-0 right-0 h-1 bg-slate-100 rounded-b-xl sm:rounded-b-2xl overflow-hidden">
-									<div 
-										className={`h-full bg-gradient-to-r from-[#4a90c8] to-[#5a9fd8] transition-all duration-300 ${
-											hoveredNotice === notice.id ? 'w-full' : 'w-0'
-										}`}
-									></div>
-								</div>
-							</div>
-						</Link>
-					))}
-				</div>
-
-				{/* View All Button */}
-				<div className="text-center">
-					<Link
-						to="/notices"
-						className="inline-flex items-center gap-2 sm:gap-3 bg-[#5a9fd8] hover:text-black hover:bg-blue-400 text-white px-8 sm:px-10 py-3 sm:py-4 rounded-xl text-sm sm:text-base font-bold transition-all duration-300 group shadow-xl hover:shadow-2xl hover:scale-105"
-					>
-						<span>View All Notices</span>
-						<div className="w-7 h-7 sm:w-8 sm:h-8 bg-white/10 rounded-lg flex items-center justify-center group-hover:bg-white/20 transition-colors">
-							<ChevronRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
-						</div>
-					</Link>
-				</div>
-			</div>
+			
 
 			<style>{`
 				@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&display=swap');

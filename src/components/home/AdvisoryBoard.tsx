@@ -1,13 +1,13 @@
 import React, { useState, useEffect, useRef } from 'react';
-import punjab from '../../assets/panjab.png';
-import deepak from '../../assets/deepak.png';
-import gautam from '../../assets/gautam.png';
-import arvind from '../../assets/arvind.png';
-import bd from '../../assets/bd.png';
-import rb from '../../assets/rb.png';
-import salooja from '../../assets/salooja.png';
-import rp from '../../assets/rp.png';
-import vinod from '../../assets/vinod.png';
+import punjab from '../../assets/panjab2.png';
+import deepak from '../../assets/deepak1.png';
+import gautam from '../../assets/gautam2.png';
+import arvind from '../../assets/arvind1.png';
+import bd from '../../assets/bd1.png';
+import rb from '../../assets/rb1.png';
+import salooja from '../../assets/salooja2.png';
+import rp from '../../assets/rp1.png';
+import vinod from '../../assets/vinod2.png';
 const AdvisoryBoard = () => {
 	const [currentIndex, setCurrentIndex] = useState(0);
 	const [isPaused, setIsPaused] = useState(false);
@@ -187,11 +187,11 @@ const AdvisoryBoard = () => {
 	return (
 		<section className="relative py-10 overflow-hidden bg-white/40">
 			{/* Animated Background */}
-			<div className="absolute inset-0">
+			{/* <div className="absolute inset-0">
 				<div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(59,130,246,0.1),transparent_50%)]"></div>
 				<div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-blue-500 to-transparent"></div>
 				<div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-cyan-500 to-transparent"></div>
-			</div>
+			</div> */}
 
 			<div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 				{/* Header */}

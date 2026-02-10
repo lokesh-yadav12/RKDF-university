@@ -40,7 +40,7 @@ const item = {
 
 export default function Amenities() {
   return (
-    <section className="relative min-h-screen md:max-h-screen overflow-hidden bg-white px-6 py-12">
+    <section className="relative  sm:max-h-screen overflow-hidden bg-white px-6 py-12 sm:py-20">
       {/* Animated Gradient Background */}
       {/* <div className="absolute inset-0 bg-gradient-to-br from-blue-600/20 via-indigo-500/10 to-cyan-400/20 animate-pulse" />
       <div className="absolute -top-40 -left-40 w-[500px] h-[500px] bg-blue-500/30 rounded-full blur-[120px]" />
@@ -58,8 +58,8 @@ export default function Amenities() {
           <p className="text-sm tracking-[0.4em] uppercase text-cyan-800 mb-4">
             Campus Facilities
           </p>
-          <h1 className="text-5xl md:text-6xl font-semibold text-black">
-            Our <span className="text-blue-900">Amenities</span>
+          <h1 className="text-5xl md:text-6xl font-semibold text-blue-900">
+            Our <span className="text-red-700">Amenities</span>
           </h1>
           <p className="mt-6 text-lg text-gray-700 max-w-2xl mx-auto">
             Designed to support academic excellence, comfort, and a vibrant campus life

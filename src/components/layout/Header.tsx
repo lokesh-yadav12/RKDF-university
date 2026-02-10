@@ -106,14 +106,14 @@ export default function Header() {
 		isScrolled ? 'bg-white shadow-md' : 'bg-white shadow-lg'
 	}`}
 >
-	<div className="max-w-full mx-auto px-4 sm:px-6 lg:px-12">
+	<div className="max-w-full mx-auto px-4 sm:px-6 font-bold lg:px-10">
 		{/* rest of your code */}
-				<div className="flex  items-center h-20">
+				<div className="flex  items-center h-28">
 					{/* Logo Section */}
 					<div className="flex items-center space-x-1">
 						{/* RKDF Logo */}
 						<Link to="/" className="flex items-center">
-							<div className="w-12 h-12 bg-red-600 rounded-full flex items-center justify-center">
+							<div className="w-20 h-20 rounded-full flex items-center justify-center">
 								<img src={logo} alt="RKDF University Logo" className="" />
 							</div>
 						</Link>
@@ -128,7 +128,7 @@ export default function Header() {
 					</div>
 
 					{/* Desktop Menu */}
-					<div className="hidden lg:flex items-center space-x-1 sm:pl-6">
+					<div className="hidden md:flex text-md font-semibold text-start space-x-1 sm:pl-6">
 						{navLinks.map((link) => (
 							<div
 								key={link.label}

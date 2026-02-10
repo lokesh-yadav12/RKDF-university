@@ -22,8 +22,8 @@ const EventsSection: React.FC = () => {
 				transition={{ duration: 0.8, ease: 'easeOut' }}
 				className="mb-8 max-w-7xl mx-auto text-center"
 			>
-				<h2 className=" text-3xl sm:text-4xl font-bold mb-2">
-					Quick <span className="text-blue-900">Information</span>
+				<h2 className=" text-3xl sm:text-4xl font-bold text-blue-900 mb-2">
+					Quick <span className="text-red-700">Information</span>
 				</h2>
 				<p className="sm:text-lg text-md text-gray-700 max-w-3xl mx-auto border-t-2 border-gray-300 pt-4">
 					Access important resources and information about our institute's administration, policies, and

@@ -139,38 +139,41 @@ export default function HeroSection() {
     <div className="w-full">
       {/* Hero Image Carousel */}
       <div 
-        className="relative bg-white w-full h-[30vh] sm:h-[60vh] md:h-[70vh] overflow-hidden group"
+        className="relative bg-white w-full overflow-hidden group"
         onMouseEnter={() => setIsPaused(true)}
         onMouseLeave={() => setIsPaused(false)}
       >
         {images.map((image, index) => (
           <div
             key={index}
-            className="absolute inset-0 transition-opacity bg-white duration-1000 ease-in-out"
+            className="transition-opacity bg-white duration-1000 ease-in-out"
             style={{
               opacity: activeIndex === index ? 1 : 0,
+              display: activeIndex === index ? 'block' : 'none',
               zIndex: activeIndex === index ? 1 : 0
             }}
           >
             <img 
               src={image.url}
               alt={image.alt}
-              className="w-full h-full object-contain object-center"
+              className="w-full h-full pt-2 sm:mt-6 object-contain"
             />
             
             {/* Centered text overlay */}
-            <div className="absolute inset-0 flex items-center justify-center">
-              <h2 className="text-white text-4xl md:text-5xl lg:text-6xl font-bold text-center px-4 drop-shadow-2xl">
-                {image.text}
-              </h2>
-            </div>
+            {image.text && (
+              <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                <h2 className="text-white text-4xl md:text-5xl lg:text-6xl font-bold text-center px-4 drop-shadow-2xl">
+                  {image.text}
+                </h2>
+              </div>
+            )}
           </div>
         ))}
 
         {/* Previous Button */}
         <button
           onClick={goToPrevious}
-          className="absolute left-2 md:left-4 top-1/2 -translate-y-1/2 z-10 bg-white/80 hover:bg-white text-gray-800 p-2 md:p-3 rounded-full shadow-lg transition-all duration-300"
+          className="absolute left-2 md:left-4 top-1/2 -translate-y-1/2 z-10 bg-white/80 hover:bg-white text-gray-800 p-2 md:p-3 rounded-full shadow-lg transition-all duration-300 hover:scale-110"
           aria-label="Previous image"
         >
           <ChevronLeft className="w-5 h-5 md:w-6 md:h-6" />
@@ -179,7 +182,7 @@ export default function HeroSection() {
         {/* Next Button */}
         <button
           onClick={goToNext}
-          className="absolute right-2 md:right-4 top-1/2 -translate-y-1/2 z-10 bg-white/80 hover:bg-white text-gray-800 p-2 md:p-3 rounded-full shadow-lg transition-all duration-300"
+          className="absolute right-2 md:right-4 top-1/2 -translate-y-1/2 z-10 bg-white/80 hover:bg-white text-gray-800 p-2 md:p-3 rounded-full shadow-lg transition-all duration-300 hover:scale-110"
           aria-label="Next image"
         >
           <ChevronRight className="w-5 h-5 md:w-6 md:h-6" />
@@ -208,14 +211,14 @@ export default function HeroSection() {
       </div>
 
       {/* Welcome Section */}
-      <div className="bg-white py-4 px-4 mb-8">
+      <div className="bg-white py-4 px-4 mb-4 mt-6">
         <div className="max-w-6xl mx-auto text-center">
-          <div className="flex flex-col md:flex-row items-center justify-center mb-3 gap-2 md:gap-0">
-            {/* Logo placeholder - replace with actual logo */}
-           <div className="flex md:hidden w-12 h-12 bg-red-600 rounded-full items-center justify-center">
+          <div className="flex flex-col md:flex-row items-center justify-center mb-2 gap-2 md:gap-0">
+           
+           <div className="flex md:hidden w-20 h-20  rounded-full items-center justify-center">
              <img src={logo} alt="" className="w-full h-full object-contain" />
             </div>
-           <div className="hidden md:flex w-16 h-16 bg-red-600 rounded-full items-center justify-center mr-4">
+           <div className="hidden md:flex w-16 h-16  rounded-full items-center justify-center mr-4">
              <img src={logo} alt="" className="w-full h-full object-contain" />
             </div>
             <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900">
