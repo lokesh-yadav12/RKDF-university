@@ -128,7 +128,7 @@ export default function Header() {
 							>
 								{link.hasDropdown ? (
 									<>
-										<button className="text-black hover:bg-[#5a9fd8] px-2 xl:px-3 py-2 rounded font-medium transition-colors flex items-center gap-0.5 whitespace-nowrap">
+										<button className="text-black hover:bg-[#5a9fd8] px-1 xl:px-2 py-2 rounded font-medium transition-colors flex items-center gap-0.5 whitespace-nowrap">
 											<span>{link.label}</span>
 											<ChevronDown className="w-4 h-4" />
 										</button>
