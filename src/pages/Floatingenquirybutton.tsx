@@ -33,7 +33,7 @@ const FloatingEnquiryButton = () => {
 
         {/* Vertical Text Label - Always Visible */}
         <div className="absolute left-1/2 -translate-x-1/2 top-full mt-3 writing-mode-vertical-rl transform rotate-180">
-          <span className="text-xs font-bold text-blue-600 tracking-wider uppercase">
+          <span className="text-xs font-bold bg-white text-blue-600 tracking-wider uppercase">
             Enquiry
           </span>
         </div>
