@@ -341,7 +341,7 @@ export default function Header() {
 		isScrolled ? 'bg-white shadow-md' : 'bg-white shadow-lg'
 	}`}
 >
-	<div className="max-w-full mx-auto px-4 sm:px-6 font-bold lg:px-10">
+	<div className="max-w-full mx-auto px-4 sm:px-6 md:px-8 font-bold lg:px-16">
 		{/* rest of your code */}
 				<div className="flex  items-center h-24">
 					{/* Logo Section */}
