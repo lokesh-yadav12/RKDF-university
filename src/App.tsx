@@ -9,6 +9,9 @@ import DPSLoading from './components/ui/Loading';
 import ChancellorMessagePage from './components/home/Chancellormessagepage';
 import ViceChancellorMessagePage from './components/home/ViceChancellormessagepage';
 import FloatingButtons from './pages/FloatingButtons'; // NEW IMPORT - Adjust path based on where you save it
+import CareersPortal from './pages/Careers';
+import PlacementPage from './pages/PlacementPage';
+import ContactPage from './pages/ContactPage';
 
 
 const Home = lazy(() => import('./pages/Home'));
@@ -65,9 +68,12 @@ function App() {
 					}
 				>
 					<Route index element={<Home />} />
-					<Route path="about" element={<About/>} />
-					<Route path="academics" element={<Academics/>} />
-					<Route path="admission" element={<Admissions/>} />
+					<Route path="/about" element={<About/>} />
+					<Route path="/academics" element={<Academics/>} />
+					<Route path="/admission" element={<Admissions/>} />
+					<Route path="/careers" element={<CareersPortal/>} />
+										<Route path="/placements" element={<PlacementPage/>} />
+					<Route path="/contact" element={<ContactPage/>} />
 
 					<Route path="/chancellor-message" element={<ChancellorMessagePage />} />
 					<Route path="/vice-chancellor-message" element={<ViceChancellorMessagePage/>} />
