@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { MessageSquare, X } from "lucide-react";
+import { X } from "lucide-react";
 import AdmissionEnquiry from "@/components/home/AdmissionEnquiry";
 
 const FloatingEnquiryButton = () => {
@@ -7,35 +7,24 @@ const FloatingEnquiryButton = () => {
 
   return (
     <>
-      {/* Floating Button */}
+      {/* Floating Vertical Tab */}
       <button
         onClick={() => setIsOpen(true)}
-        className="fixed right-4 top-1/2 -translate-y-1/2 z-40 group"
+        className="fixed right-0 top-1/2 -translate-y-1/2 z-40 group"
         aria-label="Open Enquiry Form"
       >
         <div className="relative">
-          {/* Pulsing Ring */}
-          <div className="absolute inset-0 bg-blue-500 rounded-full animate-ping opacity-75"></div>
-          
-          {/* Main Button */}
-          <div className="relative bg-gradient-to-br from-blue-600 to-indigo-600 text-white p-4 rounded-full shadow-2xl hover:shadow-blue-500/50 transform hover:scale-110 transition-all duration-300">
-            <MessageSquare className="w-6 h-6" />
-          </div>
-
-          {/* Tooltip */}
-          <div className="absolute right-full mr-4 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none whitespace-nowrap">
-            <div className="bg-gray-900 text-white px-4 py-2 rounded-lg text-sm font-semibold shadow-xl">
-              Admission Enquiry
-              <div className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/2 rotate-45 w-2 h-2 bg-gray-900"></div>
+          {/* Main Tab */}
+          <div className="bg-gradient-to-b from-blue-700 to-blue-900 text-white px-2 py-8 rounded-l-xl shadow-2xl hover:shadow-blue-500/50 transform hover:translate-x-[-4px] transition-all duration-300">
+            <div className="writing-mode-vertical-rl text-center">
+              <span className="text-sm font-bold tracking-wider uppercase whitespace-nowrap">
+                Enquire now
+              </span>
             </div>
           </div>
-        </div>
 
-        {/* Vertical Text Label - Always Visible */}
-        <div className="absolute left-1/2 -translate-x-1/2 top-full mt-3 writing-mode-vertical-rl transform rotate-180">
-          <span className="text-xs font-bold bg-white text-blue-600 tracking-wider uppercase">
-            Enquiry
-          </span>
+          {/* Subtle Glow Effect */}
+          <div className="absolute inset-0 bg-blue-400/20 rounded-l-xl blur-lg -z-10 group-hover:bg-blue-400/40 transition-all duration-300"></div>
         </div>
       </button>
 
@@ -89,6 +78,7 @@ const FloatingEnquiryButton = () => {
 
         .writing-mode-vertical-rl {
           writing-mode: vertical-rl;
+          text-orientation: mixed;
         }
       `}</style>
     </>

@@ -31,9 +31,11 @@ const Home = () => {
       <StatsSection />
       <About/>
       
-     
-      <ChancellorNoticesSection/>
+      <div className='flex flex-col px-10 gap-10'>
+        <ChancellorNoticesSection/>
       <ViceChancellorNoticesSection/>
+      </div>
+      
       <OurInstitutions/>
       {/* <AboutSection /> */}
       <AcademicPrograms />

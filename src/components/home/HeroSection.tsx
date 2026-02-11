@@ -156,7 +156,7 @@ export default function HeroSection() {
             <img 
               src={image.url}
               alt={image.alt}
-              className="w-full h-full pt-2 sm:mt-6 object-contain"
+              className="w-full h-[550px] sm:mt-4 object-cover"
             />
             
             {/* Centered text overlay */}

@@ -50,7 +50,7 @@ export default function ChancellorNoticesSection() {
   // const [hoveredNotice, setHoveredNotice] = useState<number | null>(null);
 
   return (
-    <section className="relative py-8 bg-white">
+    <section className="relative py-4 bg-white border border-gray-200 rounded-xl shadow-xl ">
       {/* Chancellor Section - Full Width Banner Style */}
       <div className="relative mb-2 overflow-hidden">
         {/* Background with Diagonal Split */}
