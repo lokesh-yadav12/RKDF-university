@@ -72,7 +72,7 @@ const AdmissionEnquiry: React.FC<AdmissionEnquiryProps> = ({ onClose }) => {
   };
 
   return (
-    <section className={`${!onClose ? 'min-h-screen' : ''} bg-gradient-to-br from-slate-50 via-white to-slate-50 py-4 px-4`}>
+    <section className={`${!onClose ? 'min-h-screen' : ''} bg-gradient-to-br from-slate-50 via-white to-slate-50  py-4 px-4`}>
       <div className="max-w-3xl mx-auto">
         {/* Header */}
         <div className="text-center mb-5">

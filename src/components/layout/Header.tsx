@@ -102,7 +102,7 @@ export default function Header() {
 
 	return (
 		<nav
-			className={`fixed top-0 left-0 right-0 w-full z-50 transition-all duration-500 ${
+			className={`fixed top-0 left-0 right-0 w-full z-30 transition-all duration-500 ${
 				isScrolled ? 'bg-white shadow-md' : 'bg-white shadow-lg'
 			}`}
 		>

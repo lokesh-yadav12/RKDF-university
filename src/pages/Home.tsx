@@ -18,29 +18,29 @@ import React from 'react'
 import OurAchievements from '@/components/home/Achievement'
 import Amenities from '@/components/home/Amenities'
 import About from '@/components/home/About'
-import FloatingEnquiryButton from './Floatingenquirybutton'
+// NO FLOATING BUTTON IMPORTS HERE!
 //import AdmissionEnquiry from '@/components/home/AdmissionEnquiry'
 
 const Home = () => {
   return (
     <div className="antialiased bg-white">
-      <FloatingEnquiryButton/>
+      {/* NO FLOATING BUTTON COMPONENT HERE! It's already in App.tsx */}
       <HeroSection />
       <AnnouncementsSection/>
-       <EventsSection />
+      <EventsSection />
       <StatsSection />
       <About/>
       
       <div className='flex flex-col px-10 gap-10'>
         <ChancellorNoticesSection/>
-      <ViceChancellorNoticesSection/>
+        <ViceChancellorNoticesSection/>
       </div>
       
       <OurInstitutions/>
       {/* <AboutSection /> */}
       <AcademicPrograms />
       
-       <Amenities/>
+      <Amenities/>
       <OurAchievements/>
       <AdvisoryBoard/>
       <LinkItem/>

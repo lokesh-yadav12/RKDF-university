@@ -8,8 +8,7 @@ import Admissions from './pages/Admission';
 import DPSLoading from './components/ui/Loading';
 import ChancellorMessagePage from './components/home/Chancellormessagepage';
 import ViceChancellorMessagePage from './components/home/ViceChancellormessagepage';
-//import AdmissionEnquiry from './components/home/AdmissionEnquiry';
-import FloatingEnquiryButton from './pages/Floatingenquirybutton';
+import FloatingButtons from './pages/FloatingButtons'; // NEW IMPORT - Adjust path based on where you save it
 
 
 const Home = lazy(() => import('./pages/Home'));
@@ -54,7 +53,8 @@ function App() {
 				</div>
 			}
 		>
-			<FloatingEnquiryButton/>
+			{/* CHANGED: Single FloatingButtons component instead of FloatingEnquiryButton */}
+			<FloatingButtons/>
 			<Routes>
 				<Route
 					path="/"
@@ -65,16 +65,12 @@ function App() {
 					}
 				>
 					<Route index element={<Home />} />
-					  <Route path="about" element={<About/>} />
+					<Route path="about" element={<About/>} />
 					<Route path="academics" element={<Academics/>} />
-					  <Route path="admission" element={<Admissions/>} />
+					<Route path="admission" element={<Admissions/>} />
 
 					<Route path="/chancellor-message" element={<ChancellorMessagePage />} />
 					<Route path="/vice-chancellor-message" element={<ViceChancellorMessagePage/>} />
-
-
-					
-					
 				</Route>
 				<Route
 					path="/404"
