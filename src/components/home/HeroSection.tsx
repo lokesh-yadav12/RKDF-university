@@ -226,9 +226,9 @@ export default function HeroSection() {
             </h1>
           </div>
           
-          <p className="text-base sm:text-lg md:text-xl text-gray-700 mt-2">
+          {/* <p className="text-base sm:text-lg md:text-xl text-gray-700 mt-2">
             Launch <a href="#" className="text-blue-600 hover:underline">Student Portal</a> of RKDF University
-          </p>
+          </p> */}
         </div>
       </div>
     </div>
