@@ -35,7 +35,7 @@ const EventsSection: React.FC = () => {
 			{/* Cards Grid */}
 			<div className="grid grid-cols-1 md:grid-cols-4 gap-6 max-w-7xl mx-auto">
 				{(Object.keys(allInfoData) as DepartmentType[]).map((key, idx) => {
-					const dept = allInfoData[key];
+const dept = allInfoData[key]!;
 
 					return (
 						<motion.div
