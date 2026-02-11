@@ -112,7 +112,7 @@ export default function Header() {
 					<div className="flex items-center space-x-1">
 						{/* RKDF Logo */}
 						<Link to="/" className="flex items-center">
-							<div className="w-20 h-20 rounded-full flex items-center justify-center">
+							<div className="w-20 h-20 mt-2 rounded-full flex items-center justify-center">
 								<img src={logo} alt="RKDF University Logo" className="" />
 							</div>
 						</Link>

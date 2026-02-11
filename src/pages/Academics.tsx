@@ -1,9 +1,29 @@
 import React, { useState } from 'react';
 
+type ColorType = 'blue' | 'green' | 'orange' | 'cyan';
+
+type ColorClasses = {
+  bg: string;
+  border: string;
+  text: string;
+  hover: string;
+};
+
+interface Program {
+  id: number;
+  title: string;
+  description: string;
+  icon: string;
+  pdfName: string;
+  pdfUrl: string;
+  color: ColorType;
+}
+
+
 const Academics = () => {
   const [selectedCategory, setSelectedCategory] = useState('programs');
 
-  const programs = [
+const programs: Program[] = [
     {
       id: 1,
       title: 'Undergraduate Programs',
@@ -108,51 +128,52 @@ const Academics = () => {
     }
   ];
 
-  const handleDownload = (pdfUrl: string, pdfName: string) => {
+const handleDownload = (pdfUrl: string, pdfName: string): void => {
     // Simulated download - in real implementation, this would trigger actual PDF download
     console.log(`Downloading: ${pdfName} from ${pdfUrl}`);
     alert(`Downloading: ${pdfName}\n\nIn production, this would download the PDF file.`);
   };
 
-  const handleView = (pdfUrl: string, pdfName: string) => {
+const handleView = (pdfUrl: string, pdfName: string): void => {
     // Simulated view - in real implementation, this would open PDF in new tab or modal
     console.log(`Viewing: ${pdfName} from ${pdfUrl}`);
     alert(`Opening: ${pdfName}\n\nIn production, this would open the PDF in a new tab or viewer.`);
   };
 
-  const getColorClasses = (color: string) => {
-    const colors: Record<string, { bg: string; border: string; text: string; hover: string }> = {
-      blue: {
-        bg: 'bg-blue-50',
-        border: 'border-blue-200',
-        text: 'text-blue-600',
-        hover: 'hover:border-blue-400'
-      },
-      green: {
-        bg: 'bg-green-50',
-        border: 'border-green-200',
-        text: 'text-green-600',
-        hover: 'hover:border-green-400'
-      },
-      orange: {
-        bg: 'bg-orange-50',
-        border: 'border-orange-200',
-        text: 'text-orange-600',
-        hover: 'hover:border-orange-400'
-      },
-      cyan: {
-        bg: 'bg-cyan-50',
-        border: 'border-cyan-200',
-        text: 'text-cyan-600',
-        hover: 'hover:border-cyan-400'
-      }
-    };
-    return colors[color] || colors.blue;
+const getColorClasses = (color: ColorType): ColorClasses => {
+  const colors: Record<ColorType, ColorClasses> = {
+    blue: {
+      bg: 'bg-blue-50',
+      border: 'border-blue-200',
+      text: 'text-blue-600',
+      hover: 'hover:border-blue-400'
+    },
+    green: {
+      bg: 'bg-green-50',
+      border: 'border-green-200',
+      text: 'text-green-600',
+      hover: 'hover:border-green-400'
+    },
+    orange: {
+      bg: 'bg-orange-50',
+      border: 'border-orange-200',
+      text: 'text-orange-600',
+      hover: 'hover:border-orange-400'
+    },
+    cyan: {
+      bg: 'bg-cyan-50',
+      border: 'border-cyan-200',
+      text: 'text-cyan-600',
+      hover: 'hover:border-cyan-400'
+    }
   };
+
+  return colors[color];
+};
 
   return (
     <div className="bg-white min-h-screen py-16 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-4xl mx-auto">
         {/* Header */}
         <div className="text-center mb-12 mt-10">
           <h2 className="text-sm font-semibold text-blue-600 tracking-wide uppercase mb-3">
@@ -200,9 +221,9 @@ const Academics = () => {
           </button>
         </div>
 
-        {/* Programs Section */}
+        {/* Programs Section - Vertical Layout */}
         {selectedCategory === 'programs' && (
-          <div className="grid md:grid-cols-2 gap-8 animate-fadeIn">
+          <div className="flex flex-col gap-6 animate-fadeIn">
             {programs.map((program) => {
               const colorClasses = getColorClasses(program.color);
               return (
@@ -241,45 +262,49 @@ const Academics = () => {
           </div>
         )}
 
-        {/* Syllabus Section */}
+        {/* Syllabus Section - Vertical Layout */}
         {selectedCategory === 'syllabus' && (
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 animate-fadeIn">
+          <div className="flex flex-col gap-6 animate-fadeIn">
             {syllabi.map((syllabus) => (
               <div
                 key={syllabus.id}
                 className="bg-gradient-to-br from-gray-50 to-blue-50 border-2 border-gray-200 rounded-xl p-6 hover:border-blue-400 transition-all duration-300 transform hover:-translate-y-2 hover:shadow-xl"
               >
-                <div className="text-5xl mb-4 text-center">{syllabus.icon}</div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3 text-center">
-                  {syllabus.department}
-                </h3>
-                <div className="text-center mb-4">
-                  <span className="text-xs text-gray-500 font-medium bg-white px-3 py-1 rounded-full">
-                    {syllabus.pdfName}
-                  </span>
-                </div>
-                <div className="flex flex-col gap-2">
-                  <button
-                    onClick={() => handleView(syllabus.pdfUrl, syllabus.pdfName)}
-                    className="bg-blue-600 text-white px-4 py-2 rounded-lg font-semibold hover:bg-blue-700 transition-colors duration-300 text-sm"
-                  >
-                    View Syllabus
-                  </button>
-                  <button
-                    onClick={() => handleDownload(syllabus.pdfUrl, syllabus.pdfName)}
-                    className="bg-gray-700 text-white px-4 py-2 rounded-lg font-semibold hover:bg-gray-800 transition-colors duration-300 text-sm"
-                  >
-                    Download
-                  </button>
+                <div className="flex items-start gap-4">
+                  <div className="text-5xl">{syllabus.icon}</div>
+                  <div className="flex-1">
+                    <h3 className="text-xl font-bold text-gray-900 mb-3">
+                      {syllabus.department}
+                    </h3>
+                    <div className="mb-4">
+                      <span className="text-xs text-gray-500 font-medium bg-white px-3 py-1 rounded-full">
+                        {syllabus.pdfName}
+                      </span>
+                    </div>
+                    <div className="flex gap-3">
+                      <button
+                        onClick={() => handleView(syllabus.pdfUrl, syllabus.pdfName)}
+                        className="bg-blue-600 text-white px-4 py-2 rounded-lg font-semibold hover:bg-blue-700 transition-colors duration-300 text-sm"
+                      >
+                        View Syllabus
+                      </button>
+                      <button
+                        onClick={() => handleDownload(syllabus.pdfUrl, syllabus.pdfName)}
+                        className="bg-gray-700 text-white px-4 py-2 rounded-lg font-semibold hover:bg-gray-800 transition-colors duration-300 text-sm"
+                      >
+                        Download
+                      </button>
+                    </div>
+                  </div>
                 </div>
               </div>
             ))}
           </div>
         )}
 
-        {/* Academic Documents Section */}
+        {/* Academic Documents Section - Vertical Layout */}
         {selectedCategory === 'documents' && (
-          <div className="grid md:grid-cols-2 gap-8 animate-fadeIn">
+          <div className="flex flex-col gap-6 animate-fadeIn">
             {academicDocs.map((doc) => (
               <div
                 key={doc.id}
@@ -328,7 +353,7 @@ const Academics = () => {
         </div>
       </div>
 
-      <style >{`
+      <style>{`
         @keyframes fadeIn {
           from {
             opacity: 0;

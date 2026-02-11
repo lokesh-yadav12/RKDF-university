@@ -8,6 +8,7 @@ const EventsSection: React.FC = () => {
 	const [activeItem, setActiveItem] = useState<string | null>(null);
 
 	const handleViewAll = (key: DepartmentType) => {
+		// Scroll to top and navigate
 		window.scrollTo({ top: 0, behavior: 'smooth' });
 		navigate(`/all-info/${key}`);
 	};
@@ -22,7 +23,7 @@ const EventsSection: React.FC = () => {
 				transition={{ duration: 0.8, ease: 'easeOut' }}
 				className="mb-8 max-w-7xl mx-auto text-center"
 			>
-				<h2 className=" text-3xl sm:text-4xl font-bold text-blue-900 mb-2">
+				<h2 className="text-3xl sm:text-4xl font-bold text-blue-900 mb-2">
 					Quick <span className="text-red-700">Information</span>
 				</h2>
 				<p className="sm:text-lg text-md text-gray-700 max-w-3xl mx-auto border-t-2 border-gray-300 pt-4">
@@ -32,7 +33,7 @@ const EventsSection: React.FC = () => {
 			</motion.div>
 
 			{/* Cards Grid */}
-			<div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+			<div className="grid grid-cols-1 md:grid-cols-4 gap-6 max-w-7xl mx-auto">
 				{(Object.keys(allInfoData) as DepartmentType[]).map((key, idx) => {
 					const dept = allInfoData[key];
 
@@ -54,9 +55,9 @@ const EventsSection: React.FC = () => {
 								delay: idx * 0.1,
 							}}
 							viewport={{ once: true }}
-							className="relative bg-white/90 border rounded-xl flex flex-col overflow-hidden max-h-[420px]"
+							className="relative bg-white/90 border rounded-xl flex flex-col overflow-hidden max-h-[420px] shadow-lg hover:shadow-xl transition-shadow"
 						>
-							{/* Golden border */}
+							{/* Golden border on hover */}
 							<motion.span
 								initial={{ opacity: 0 }}
 								whileHover={{ opacity: 1 }}
@@ -84,8 +85,9 @@ const EventsSection: React.FC = () => {
 											onTapStart={() => setActiveItem(itemKey)}
 											onTapCancel={() => setActiveItem(null)}
 											onTap={() => setTimeout(() => setActiveItem(null), 300)}
+											onClick={() => handleViewAll(key)}
 										>
-											{/* Yellow slide background */}
+											{/* Blue slide background */}
 											<motion.span
 												initial={{ scaleX: 0 }}
 												animate={{ scaleX: activeItem === itemKey ? 1 : 0 }}
@@ -107,7 +109,7 @@ const EventsSection: React.FC = () => {
 								whileTap={{ scale: 0.92 }}
 								className="relative overflow-hidden bg-[#4a90c8] text-white py-3 font-medium flex items-center justify-center gap-2"
 							>
-								{/* Shimmer */}
+								{/* Shimmer effect */}
 								<span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/40 to-transparent translate-x-[-100%] hover:translate-x-[100%] transition-transform duration-700" />
 
 								<span className="relative z-10 flex items-center gap-2">

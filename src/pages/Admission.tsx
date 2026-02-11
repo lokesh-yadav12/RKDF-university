@@ -37,7 +37,7 @@ const applicationForms: ApplicationForm[] = [
       description: 'Application form for master and doctoral programs',
       icon: '🎓',
       deadline: 'July 15, 2024',
-      color: 'green',
+      color: 'blue',
       formType: 'postgraduate'
     },
     {
@@ -46,7 +46,7 @@ const applicationForms: ApplicationForm[] = [
       description: 'Special application for international applicants',
       icon: '🌍',
       deadline: 'May 31, 2024',
-      color: 'orange',
+      color: 'blue',
       formType: 'international'
     },
     {
@@ -55,7 +55,7 @@ const applicationForms: ApplicationForm[] = [
       description: 'Form for students transferring from other institutions',
       icon: '🔄',
       deadline: 'July 1, 2024',
-      color: 'cyan',
+      color: 'blue',
       formType: 'transfer'
     }
   ];
@@ -193,10 +193,10 @@ const applicationForms: ApplicationForm[] = [
 
   return (
     <div className="bg-white min-h-screen py-16 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-4xl mx-auto">
         {/* Header */}
         <div className="text-center mb-12 mt-10">
-          <h2 className="text-sm font-semibold text-green-600 tracking-wide uppercase mb-3">
+          <h2 className="text-sm font-semibold text-blue-600 tracking-wide uppercase mb-3">
             Admissions
           </h2>
           <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-6">
@@ -208,21 +208,21 @@ const applicationForms: ApplicationForm[] = [
         </div>
 
         {/* Quick Stats */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
-          <div className="text-center p-6 bg-gradient-to-br from-blue-50 to-cyan-50 rounded-xl">
+        <div className="flex flex-row justify-center items-center gap-4 mb-12">
+          <div className="text-center p-6 bg-gradient-to-br from-blue-50 to-white rounded-xl border border-blue-100">
             <div className="text-3xl font-bold text-blue-600 mb-2">5000+</div>
             <div className="text-gray-700 font-medium">Applications/Year</div>
           </div>
-          <div className="text-center p-6 bg-gradient-to-br from-green-50 to-emerald-50 rounded-xl">
-            <div className="text-3xl font-bold text-green-600 mb-2">95%</div>
+          <div className="text-center p-6 bg-gradient-to-br from-blue-50 to-white rounded-xl border border-blue-100">
+            <div className="text-3xl font-bold text-blue-600 mb-2">95%</div>
             <div className="text-gray-700 font-medium">Acceptance Rate</div>
           </div>
-          <div className="text-center p-6 bg-gradient-to-br from-orange-50 to-amber-50 rounded-xl">
-            <div className="text-3xl font-bold text-orange-600 mb-2">50+</div>
+          <div className="text-center p-6 bg-gradient-to-br from-blue-50 to-white rounded-xl border border-blue-100">
+            <div className="text-3xl font-bold text-blue-600 mb-2">50+</div>
             <div className="text-gray-700 font-medium">Programs Offered</div>
           </div>
-          <div className="text-center p-6 bg-gradient-to-br from-cyan-50 to-sky-50 rounded-xl">
-            <div className="text-3xl font-bold text-cyan-600 mb-2">30+</div>
+          <div className="text-center p-6 bg-gradient-to-br from-blue-50 to-white rounded-xl border border-blue-100">
+            <div className="text-3xl font-bold text-blue-600 mb-2">30+</div>
             <div className="text-gray-700 font-medium">Countries</div>
           </div>
         </div>
@@ -233,8 +233,8 @@ const applicationForms: ApplicationForm[] = [
             onClick={() => setActiveTab('application')}
             className={`px-6 py-3 rounded-lg font-semibold transition-all duration-300 ${
               activeTab === 'application'
-                ? 'bg-green-600 text-white shadow-lg scale-105'
-                : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                ? 'bg-blue-600 text-white shadow-lg scale-105'
+                : 'bg-white text-gray-700 hover:bg-blue-50 border border-blue-200'
             }`}
           >
             Application Forms
@@ -243,8 +243,8 @@ const applicationForms: ApplicationForm[] = [
             onClick={() => setActiveTab('documents')}
             className={`px-6 py-3 rounded-lg font-semibold transition-all duration-300 ${
               activeTab === 'documents'
-                ? 'bg-green-600 text-white shadow-lg scale-105'
-                : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                ? 'bg-blue-600 text-white shadow-lg scale-105'
+                : 'bg-white text-gray-700 hover:bg-blue-50 border border-blue-200'
             }`}
           >
             Admission Documents
@@ -253,21 +253,21 @@ const applicationForms: ApplicationForm[] = [
             onClick={() => setActiveTab('requirements')}
             className={`px-6 py-3 rounded-lg font-semibold transition-all duration-300 ${
               activeTab === 'requirements'
-                ? 'bg-green-600 text-white shadow-lg scale-105'
-                : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                ? 'bg-blue-600 text-white shadow-lg scale-105'
+                : 'bg-white text-gray-700 hover:bg-blue-50 border border-blue-200'
             }`}
           >
             Requirements
           </button>
         </div>
 
-        {/* Application Forms Tab */}
+        {/* Application Forms Tab - Vertical Layout */}
         {activeTab === 'application' && (
-          <div className="grid md:grid-cols-2 gap-8 animate-fadeIn">
+          <div className="flex flex-col gap-6 animate-fadeIn">
             {applicationForms.map((form) => (
               <div
                 key={form.id}
-                className="bg-gradient-to-br from-white to-gray-50 border-2 border-gray-200 rounded-xl p-6 hover:border-green-400 hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2"
+                className="bg-white border-2 border-blue-200 rounded-xl p-6 hover:border-blue-400 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
               >
                 <div className="flex items-start justify-between mb-4">
                   <div className="text-5xl">{form.icon}</div>
@@ -279,7 +279,7 @@ const applicationForms: ApplicationForm[] = [
                 <p className="text-gray-600 mb-6">{form.description}</p>
                 <button
                   onClick={() => handleOpenForm(form.formType)}
-                  className="w-full bg-green-600 text-white px-4 py-3 rounded-lg font-semibold hover:bg-green-700 transition-colors duration-300 flex items-center justify-center gap-2"
+                  className="w-full bg-blue-600 text-white px-4 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors duration-300 flex items-center justify-center gap-2"
                 >
                   <span>📝</span> Fill Application Form
                 </button>
@@ -288,13 +288,13 @@ const applicationForms: ApplicationForm[] = [
           </div>
         )}
 
-        {/* Admission Documents Tab */}
+        {/* Admission Documents Tab - Vertical Layout */}
         {activeTab === 'documents' && (
-          <div className="grid md:grid-cols-2 gap-8 animate-fadeIn">
+          <div className="flex flex-col gap-6 animate-fadeIn">
             {admissionDocs.map((doc) => (
               <div
                 key={doc.id}
-                className="bg-white border-2 border-gray-200 rounded-xl p-6 hover:border-blue-400 hover:bg-blue-50 transition-all duration-300 transform hover:-translate-y-2 hover:shadow-xl"
+                className="bg-white border-2 border-blue-200 rounded-xl p-6 hover:border-blue-400 hover:bg-blue-50 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-xl"
               >
                 <div className="flex items-start gap-4">
                   <div className="text-5xl flex-shrink-0">{doc.icon}</div>
@@ -330,35 +330,39 @@ const applicationForms: ApplicationForm[] = [
           </div>
         )}
 
-        {/* Requirements Tab */}
+        {/* Requirements Tab - Vertical Layout */}
         {activeTab === 'requirements' && (
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 animate-fadeIn">
+          <div className="flex flex-col gap-6 animate-fadeIn">
             {requirements.map((req) => (
               <div
                 key={req.id}
-                className="bg-gradient-to-br from-green-50 to-emerald-50 border-2 border-green-200 rounded-xl p-6 hover:border-green-400 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2"
+                className="bg-gradient-to-br from-blue-50 to-white border-2 border-blue-200 rounded-xl p-6 hover:border-blue-400 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
               >
-                <div className="text-5xl mb-4 text-center">{req.icon}</div>
-                <h3 className="text-lg font-bold text-gray-900 mb-2 text-center">{req.title}</h3>
-                <p className="text-gray-600 text-sm mb-4 text-center">{req.description}</p>
-                <div className="text-center mb-4">
-                  <span className="text-xs text-gray-500 bg-white px-3 py-1 rounded-full font-medium">
-                    {req.pdfName}
-                  </span>
-                </div>
-                <div className="flex flex-col gap-2">
-                  <button
-                    onClick={() => handleView(req.pdfUrl, req.pdfName)}
-                    className="bg-green-600 text-white px-4 py-2 rounded-lg font-semibold hover:bg-green-700 transition-colors duration-300"
-                  >
-                    View PDF
-                  </button>
-                  <button
-                    onClick={() => handleDownload(req.pdfUrl, req.pdfName)}
-                    className="bg-gray-700 text-white px-4 py-2 rounded-lg font-semibold hover:bg-gray-800 transition-colors duration-300"
-                  >
-                    Download
-                  </button>
+                <div className="flex items-start gap-4">
+                  <div className="text-5xl">{req.icon}</div>
+                  <div className="flex-1">
+                    <h3 className="text-lg font-bold text-gray-900 mb-2">{req.title}</h3>
+                    <p className="text-gray-600 text-sm mb-4">{req.description}</p>
+                    <div className="mb-4">
+                      <span className="text-xs text-gray-500 bg-white px-3 py-1 rounded-full font-medium border border-blue-100">
+                        {req.pdfName}
+                      </span>
+                    </div>
+                    <div className="flex gap-3">
+                      <button
+                        onClick={() => handleView(req.pdfUrl, req.pdfName)}
+                        className="flex-1 bg-blue-600 text-white px-4 py-2 rounded-lg font-semibold hover:bg-blue-700 transition-colors duration-300"
+                      >
+                        View PDF
+                      </button>
+                      <button
+                        onClick={() => handleDownload(req.pdfUrl, req.pdfName)}
+                        className="flex-1 bg-gray-700 text-white px-4 py-2 rounded-lg font-semibold hover:bg-gray-800 transition-colors duration-300"
+                      >
+                        Download
+                      </button>
+                    </div>
+                  </div>
                 </div>
               </div>
             ))}
@@ -366,51 +370,59 @@ const applicationForms: ApplicationForm[] = [
         )}
 
         {/* Application Process Timeline */}
-        <div className="mt-16 bg-gradient-to-r from-green-50 to-blue-50 rounded-2xl p-8">
+        <div className="mt-16 bg-gradient-to-r from-blue-50 to-white rounded-2xl p-8 border border-blue-100">
           <h3 className="text-3xl font-bold text-gray-900 mb-8 text-center">Application Process</h3>
-          <div className="grid md:grid-cols-4 gap-6">
-            <div className="text-center">
-              <div className="bg-green-600 text-white w-16 h-16 rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">
+          <div className="flex flex-col gap-6">
+            <div className="flex items-start gap-4 p-4 bg-white rounded-lg border border-blue-100">
+              <div className="bg-blue-600 text-white w-12 h-12 rounded-full flex items-center justify-center text-xl font-bold flex-shrink-0">
                 1
               </div>
-              <h4 className="font-bold text-gray-900 mb-2">Choose Form</h4>
-              <p className="text-sm text-gray-600">Select the application form for your desired program</p>
+              <div>
+                <h4 className="font-bold text-gray-900 mb-2">Choose Form</h4>
+                <p className="text-sm text-gray-600">Select the application form for your desired program</p>
+              </div>
             </div>
-            <div className="text-center">
-              <div className="bg-blue-600 text-white w-16 h-16 rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">
+            <div className="flex items-start gap-4 p-4 bg-white rounded-lg border border-blue-100">
+              <div className="bg-blue-600 text-white w-12 h-12 rounded-full flex items-center justify-center text-xl font-bold flex-shrink-0">
                 2
               </div>
-              <h4 className="font-bold text-gray-900 mb-2">Fill Details</h4>
-              <p className="text-sm text-gray-600">Complete the form with accurate information</p>
+              <div>
+                <h4 className="font-bold text-gray-900 mb-2">Fill Details</h4>
+                <p className="text-sm text-gray-600">Complete the form with accurate information</p>
+              </div>
             </div>
-            <div className="text-center">
-              <div className="bg-orange-600 text-white w-16 h-16 rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">
+            <div className="flex items-start gap-4 p-4 bg-white rounded-lg border border-blue-100">
+              <div className="bg-blue-600 text-white w-12 h-12 rounded-full flex items-center justify-center text-xl font-bold flex-shrink-0">
                 3
               </div>
-              <h4 className="font-bold text-gray-900 mb-2">Submit Documents</h4>
-              <p className="text-sm text-gray-600">Upload required documents and certificates</p>
+              <div>
+                <h4 className="font-bold text-gray-900 mb-2">Submit Documents</h4>
+                <p className="text-sm text-gray-600">Upload required documents and certificates</p>
+              </div>
             </div>
-            <div className="text-center">
-              <div className="bg-cyan-600 text-white w-16 h-16 rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">
+            <div className="flex items-start gap-4 p-4 bg-white rounded-lg border border-blue-100">
+              <div className="bg-blue-600 text-white w-12 h-12 rounded-full flex items-center justify-center text-xl font-bold flex-shrink-0">
                 4
               </div>
-              <h4 className="font-bold text-gray-900 mb-2">Get Admitted</h4>
-              <p className="text-sm text-gray-600">Receive confirmation and join our university</p>
+              <div>
+                <h4 className="font-bold text-gray-900 mb-2">Get Admitted</h4>
+                <p className="text-sm text-gray-600">Receive confirmation and join our university</p>
+              </div>
             </div>
           </div>
         </div>
 
         {/* CTA Section */}
-        <div className="mt-16 bg-gradient-to-r from-green-600 to-emerald-600 rounded-2xl p-8 text-center text-white">
+        <div className="mt-16 bg-gradient-to-r from-blue-600 to-blue-700 rounded-2xl p-8 text-center text-white">
           <h3 className="text-3xl font-bold mb-4">Need Help with Admissions?</h3>
           <p className="text-lg mb-6 opacity-90">
             Our admission counselors are available to assist you throughout the process
           </p>
-          <div className="flex flex-wrap justify-center gap-4">
-            <button className="bg-white text-green-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors duration-300 shadow-lg">
+          <div className="flex flex-col sm:flex-row justify-center gap-4">
+            <button className="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-colors duration-300 shadow-lg">
               Contact Admission Office
             </button>
-            <button className="bg-transparent border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-green-600 transition-colors duration-300">
+            <button className="bg-transparent border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-colors duration-300">
               Schedule Campus Visit
             </button>
           </div>

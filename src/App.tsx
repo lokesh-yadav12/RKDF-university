@@ -12,7 +12,7 @@ import FloatingButtons from './pages/FloatingButtons'; // NEW IMPORT - Adjust pa
 import CareersPortal from './pages/Careers';
 import PlacementPage from './pages/PlacementPage';
 import ContactPage from './pages/ContactPage';
-
+import AllInfoPage from './pages/AllInfoPage';
 
 const Home = lazy(() => import('./pages/Home'));
 const About = lazy(() => import('./pages/About'));
@@ -37,10 +37,7 @@ function App() {
 		return (
 			<div className="fixed inset-0 z-50 flex items-center justify-center bg-gray-100 overflow-hidden">
 				<div className="scale-[2]">
-					<DPSLoading
-						duration={2000}
-						onLoadingComplete={handleInitialLoadingComplete}
-					/>
+					<DPSLoading duration={2000} onLoadingComplete={handleInitialLoadingComplete} />
 				</div>
 			</div>
 		);
@@ -57,7 +54,7 @@ function App() {
 			}
 		>
 			{/* CHANGED: Single FloatingButtons component instead of FloatingEnquiryButton */}
-			<FloatingButtons/>
+			<FloatingButtons />
 			<Routes>
 				<Route
 					path="/"
@@ -68,15 +65,15 @@ function App() {
 					}
 				>
 					<Route index element={<Home />} />
-					<Route path="/about" element={<About/>} />
-					<Route path="/academics" element={<Academics/>} />
-					<Route path="/admission" element={<Admissions/>} />
-					<Route path="/careers" element={<CareersPortal/>} />
-										<Route path="/placements" element={<PlacementPage/>} />
-					<Route path="/contact" element={<ContactPage/>} />
-
+					<Route path="/about" element={<About />} />
+					<Route path="/academics" element={<Academics />} />
+					<Route path="/admission" element={<Admissions />} />
+					<Route path="/careers" element={<CareersPortal />} />
+					<Route path="/all-info/:department" element={<AllInfoPage />} />
+					<Route path="/placements" element={<PlacementPage />} />
+					<Route path="/contact" element={<ContactPage />} />
 					<Route path="/chancellor-message" element={<ChancellorMessagePage />} />
-					<Route path="/vice-chancellor-message" element={<ViceChancellorMessagePage/>} />
+					<Route path="/vice-chancellor-message" element={<ViceChancellorMessagePage />} />
 				</Route>
 				<Route
 					path="/404"
