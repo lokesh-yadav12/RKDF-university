@@ -247,17 +247,17 @@ export default function AnnouncementsSection() {
 				<div className="mt-12 flex justify-center">
 					<div className="inline-flex items-center space-x-4 backdrop-blur-xl bg-black/10 rounded-full px-10 py-5 shadow-2xl border border-black/20">
 						<div className="relative">
-							<div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
-							<div className="absolute inset-0 w-3 h-3 bg-green-500 rounded-full animate-ping"></div>
+							<div className="w-3 h-3 bg-blue-500 rounded-full animate-pulse"></div>
+							<div className="absolute inset-0 w-3 h-3 bg-blue-500 rounded-full animate-ping"></div>
 						</div>
 						<span className="text-black font-semibold tracking-wide">All Systems Operational</span>
 						<div className="relative">
 							<div
-								className="w-3 h-3 bg-green-500 rounded-full animate-pulse"
+								className="w-3 h-3 bg-blue-500 rounded-full animate-pulse"
 								style={{ animationDelay: '1s' }}
 							></div>
 							<div
-								className="absolute inset-0 w-3 h-3 bg-green-500 rounded-full animate-ping"
+								className="absolute inset-0 w-3 h-3 bg-blue-500 rounded-full animate-ping"
 								style={{ animationDelay: '1s' }}
 							></div>
 						</div>
