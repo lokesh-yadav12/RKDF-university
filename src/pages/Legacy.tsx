@@ -7,10 +7,9 @@ import { motion } from 'framer-motion';
 // import LeadershipKKECT from '../components/home/LeadershipKKCET';
 
 // Import images
-import mottoImage from '@/assets/motopic.png';
+import mottoImage from '@/assets/motto.png';
 import visionImage from '@/assets/vision.jpeg';
 import missionImage from '@/assets/mission.png';
-import m3 from '@/assets/m3.jpg';
 
 // interface SectionProps {
 //   id: string;
@@ -106,7 +105,7 @@ const Legacy: React.FC = () => {
 
 	return (
 		<div className="bg-white">
-			<motion.div
+			{/* <motion.div
 				className="relative bg-primary-700 py-16 overflow-hidden h-[50vh] "
 				initial={{ opacity: 0 }}
 				animate={{ opacity: 1 }}
@@ -137,7 +136,7 @@ const Legacy: React.FC = () => {
 						A Tradition of Excellence in Education Since 2006
 					</p>
 				</div>
-			</motion.div>
+			</motion.div> */}
 
 			<motion.section
 				id="motto"
@@ -157,9 +156,9 @@ const Legacy: React.FC = () => {
 							/>
 						</div>
 
-						<div className="w-full md:w-[70%] md:ml-[30%] bg-gradient-to-br from-[#FDE68A] to-[#BFDBFE] text-[#B45309] shadow-xl pt-12 pb-12 px-6 sm:px-8 min-h-[350px] hover:shadow-2xl transition-all duration-300">
+						<div className="w-full md:w-[70%] md:ml-[30%] bg-gradient-to-br from-blue-700 to-red-200 text-white shadow-xl pt-12 pb-12 px-6 sm:px-8 min-h-[350px] hover:shadow-2xl transition-all duration-300  rounded-xl">
 							<div className="md:ml-[25%]">
-								<h2 className="text-4xl md:text-5xl font-bold mb-6">SCHOOL MOTTO</h2>
+								<h2 className="text-4xl md:text-5xl font-bold mb-6">OUR MOTTO</h2>
 
 								<h3 className="text-2xl font-semibold mb-8">नहि ज्ञानेन सदृश्यं</h3>
 
@@ -191,13 +190,13 @@ const Legacy: React.FC = () => {
 					<div className="relative min-h-[500px]">
 						<div className="hidden md:flex w-3/2 absolute right-0 top-0 bottom-0 items-center justify-start z-10 hover:scale-105 transition-all duration-300">
 							<img
-								src={visionImage}
+								src="https://www.gvnml.org/wp-content/uploads/2020/12/vission.png"
 								alt="Vision"
-								className="h-64 lg:h-[440px] w-[440px] object-cover ml-4 rounded-xl  bg-white"
+								className="h-64 lg:h-[440px] w-[440px] object-contain ml-4 rounded-xl  bg-white"
 							/>
 						</div>
 
-						<div className="w-full md:w-[70%] bg-gradient-to-br from-[#F5DAA7] to-[#A7F3D0] text-[#065F46] shadow-xl pt-12 pb-12 px-6 sm:px-8 min-h-[350px] hover:shadow-2xl transition-all duration-300">
+						<div className="w-full md:w-[70%] bg-gradient-to-br from-blue-700 to-red-200 text-white rounded-xl shadow-xl pt-12 pb-12 px-6 sm:px-8 min-h-[350px] hover:shadow-2xl transition-all duration-300">
 							<div className="md:mr-[25%]">
 								<h2 className="text-4xl md:text-5xl font-bold mb-6">OUR VISION</h2>
 								<h3 className="text-2xl font-semibold mb-8">Empowering Students to Change the World</h3>
@@ -232,15 +231,15 @@ const Legacy: React.FC = () => {
 			>
 				<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 					<div className="relative min-h-[500px]">
-						<div className="hidden md:flex w-3/2 absolute left-20 top-0 bottom-0 items-center justify-end z-10">
+						<div className="hidden md:flex w-3/2 absolute top-0 bottom-0 items-center justify-end z-10">
 							<img
-								src={missionImage}
+								src="https://renaissanceacademytilhar.com/img/mission.jpg"
 								alt="Mission"
-								className="h-64 lg:h-[450px] w-[340px] bg-white  eobject-contain mr-4 rounded-xl  hover:scale-105 transition-all duration-300"
+								className="h-64 lg:h-[450px] w-[500px] bg-white  eobject-contain mr-4 rounded-xl  hover:scale-105 transition-all duration-300"
 							/>
 						</div>
 
-						<div className="w-full md:w-[70%] md:ml-[30%] bg-gradient-to-br from-[#FDE68A] to-[#BFDBFE] text-[#B45309] shadow-xl pt-12 pb-12 px-6 sm:px-8 min-h-[350px] hover:shadow-2xl transition-all duration-300">
+						<div className="w-full md:w-[70%] md:ml-[30%] bg-gradient-to-br from-blue-700 to-red-200 text-white shadow-xl pt-12 pb-12 px-6 sm:px-8 min-h-[350px] hover:shadow-2xl transition-all duration-300">
 							<div className="md:ml-[25%]">
 								<h2 className="text-4xl md:text-5xl font-bold mb-6">OUR MISSION</h2>
 								<h3 className="text-2xl font-semibold mb-8">Multi-Dimensional Growth</h3>
