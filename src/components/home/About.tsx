@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import about1 from '../../assets/about1.jpeg'
+import about1 from '../../assets/rkdflogo.png'
 const fadeUp = {
   hidden: { opacity: 0, y: 40 },
   visible: { opacity: 1, y: 0 },
@@ -42,7 +42,7 @@ export default function About() {
               <img
                 src={about1}
                 alt="RKDF University Campus"
-                className="w-full h-[400px] object-cover transform group-hover:scale-105 transition duration-500"
+                className="w-full h-[400px] object-contain transform group-hover:scale-105 transition duration-500"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-blue-900/40 to-transparent" />
             </div>

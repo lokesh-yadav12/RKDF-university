@@ -92,6 +92,13 @@ export default function Header() {
 	const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
 	const [isScrolled, setIsScrolled] = useState(false);
 
+	const handleLogoClick = () => {
+	window.scrollTo({
+		top: 0,
+		behavior: 'smooth',
+	});
+};
+
 	useEffect(() => {
 		const handleScroll = () => {
 			setIsScrolled(window.scrollY > 50);
@@ -111,7 +118,7 @@ export default function Header() {
 					{/* Logo Section */}
 					<div className="flex items-center space-x-1">
 						{/* RKDF Logo */}
-						<Link to="/" className="flex items-center">
+						<Link to="/" 	onClick={handleLogoClick} className="flex items-center">
 							<div className="w-20 h-20 mt-2 rounded-full flex items-center justify-center">
 								<img src={logo} alt="RKDF University Logo" className="" />
 							</div>
