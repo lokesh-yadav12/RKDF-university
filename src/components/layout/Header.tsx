@@ -21,7 +21,7 @@ const navLinks: NavLink[] = [
 		hasDropdown: true,
 		dropdownItems: [
 			{ label: 'Overview', href: '/about' },
-			{ label: 'Mission & Vision', href: '/about/mission' },
+			{ label: 'Mission & Vision', href: '/about/legacy' },
 			{ label: 'Leadership', href: '/about/leadership' },
 			{ label: 'Accreditations', href: '/about/accreditations' },
 		],
